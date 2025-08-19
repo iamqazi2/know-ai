@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
-import { Button } from "./ui/button";
 import Image from "next/image";
 
 const PersonalAssistantSlider = () => {

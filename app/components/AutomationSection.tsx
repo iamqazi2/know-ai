@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const AutomationSection = () => {
   const features = [
     {
@@ -49,7 +51,9 @@ const AutomationSection = () => {
             >
               {/* Top Image */}
               <div className="w-full flex justify-center mt-6">
-                <img
+                <Image
+                  height={100}
+                  width={100}
                   src={feature.topImage}
                   alt={feature.title}
                   className="max-h-[100px] object-contain"
@@ -68,7 +72,9 @@ const AutomationSection = () => {
 
               {/* Main Image */}
               <div className="flex-1 flex items-center justify-center">
-                <img
+                <Image
+                  height={250}
+                  width={250}
                   src={feature.mainImage}
                   alt={`${feature.title} visual`}
                   className="max-h-[220px] sm:max-h-[240px] lg:max-h-[250px] object-contain"

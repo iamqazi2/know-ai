@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from "./navbar/button";
 
 const IntegrationsSection = () => {
   const integrations = [
