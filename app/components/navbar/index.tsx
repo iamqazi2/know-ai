@@ -96,7 +96,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 max-w-sm bg-black/95 backdrop-blur-md border-l border-gray-800 z-50 transform transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-80 z-100 max-w-sm bg-black/95 backdrop-blur-md border-l border-gray-800 z-50 transform transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

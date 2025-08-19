@@ -116,7 +116,7 @@ const HeroSection = () => {
       />
       <div
         ref={strategicBadgeRef}
-        className="absolute top-44 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-to-r from-white/20 to-black backdrop-blur-sm border-1 border-white/20 rounded-full px-1 py-2 text-sm"
+        className="absolute top-44 left-1/2 transform -translate-x-1/2 z-0 bg-gradient-to-r from-white/20 to-black backdrop-blur-sm border-1 border-white/20 rounded-full px-1 py-2 text-sm"
       >
         <span className="flex items-center gap-2">
           <Image
