@@ -105,7 +105,7 @@ const HeroSection = () => {
         alt="ellipse"
         width={1000}
         height={1000}
-        className="absolute w-[150%] h-auto bottom-[-20rem] left-1/2 transform -translate-x-1/2 pointer-events-none"
+        className="absolute w-[150%] h-auto bottom-[20rem] sm:bottom-[0] left-1/2 transform -translate-x-1/2 pointer-events-none"
       />
 
       {/* Strategic Badge */}
