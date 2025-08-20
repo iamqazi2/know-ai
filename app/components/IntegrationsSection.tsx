@@ -78,16 +78,16 @@ const IntegrationsSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
             viewport={{ once: true }}
-            className="w-full flex justify-center mt-1 sm:mt-10 lg:mt-12"
+            className="w-full flex justify-center mt-1 mb-10"
           >
             <button
               className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-  mt-6 sm:mt-10 
+  
   h-[50px] sm:h-[60px] lg:h-[70px] 
   w-[160px] sm:w-[200px] lg:w-[240px] 
   text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
   text-[14px] sm:text-[18px] lg:text-[20px] 
-  py-2 
+  py-2  mb-10
   transition-all duration-300 ease-in-out 
   hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
             >
