@@ -55,7 +55,7 @@ const ServicesSection = () => {
 
   return (
     <motion.div
-      className="relative mx-auto px-4 py-10 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
+      className="relative mx-auto px-4 py-24 sm:py-32 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -63,7 +63,7 @@ const ServicesSection = () => {
     >
       {/* Dark mode indicator */}
       <div
-        className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 
+        className="absolute top-12 sm:top-18 left-1/2 -translate-x-1/2 
          w-fit h-[36px] sm:h-[40px] 
           flex items-center justify-between 
           px-[8px] sm:px-[10px] 

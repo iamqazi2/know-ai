@@ -19,7 +19,7 @@ const IntegrationsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
+    <section className="py-10 sm:py-20 px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -29,7 +29,7 @@ const IntegrationsSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-8
+              className="absolute left-1/2 -translate-x-1/2 top-2 sm:top-8
               flex items-center px-3 sm:px-4 py-1 rounded-full border border-[#FFFFFF1A] 
               bg-gradient-to-r from-white/10 to-transparent shadow-[inset_0px_1px_10px_rgba(0,0,0,0.25)] gap-2"
             >

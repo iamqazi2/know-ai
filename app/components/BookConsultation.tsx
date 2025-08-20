@@ -125,7 +125,7 @@ const BookConsultation = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-16 sm:py-20 px-4 sm:px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
+      className="py-10 sm:py-20 px-4 sm:px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -136,7 +136,7 @@ const BookConsultation = () => {
           >
             {/* Top badge */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-8
+              className="absolute left-1/2 -translate-x-1/2 top-2 sm:top-8
               flex items-center px-3 sm:px-4 py-1 rounded-full border border-[#FFFFFF1A] 
               bg-gradient-to-r from-white/10 to-transparent shadow-[inset_0px_1px_10px_rgba(0,0,0,0.25)] gap-2"
             >

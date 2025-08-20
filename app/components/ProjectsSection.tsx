@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ProjectSection() {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-black">
+    <section className="py-10 sm:py-20 px-4 sm:px-6 bg-black">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -22,7 +22,7 @@ export default function ProjectSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true }}
-              className="absolute left-1/2 -translate-x-1/2 top-6 sm:top-8
+              className="absolute left-1/2 -translate-x-1/2 top-2 sm:top-8
               w-fit h-[32px] sm:h-[40px] 
               flex items-center justify-between 
               px-[8px] sm:px-[10px] 
