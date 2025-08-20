@@ -13,7 +13,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="max-w-68"
+             
           >
             <div className="flex items-center space-x-2 mb-4">
               <div className="flex gap-2 items-center justify-center">
@@ -29,7 +29,7 @@ const Footer = () => {
                 />
               </div>
             </div>
-            <p className="font-urbanist font-medium text-base leading-1 capitalize text-gray-400 w-full">
+            <p className="font-urbanist font-medium text-base leading-[130%] capitalize text-gray-400 w-full">
               Experts In Identifying The Right AI Opportunities, Designing
               Custom Automation Workflows.
             </p>

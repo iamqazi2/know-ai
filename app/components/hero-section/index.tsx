@@ -17,7 +17,6 @@ const HeroSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial states
       gsap.set(
         [
           headingRef.current,
@@ -37,10 +36,8 @@ const HeroSection = () => {
       gsap.set(rightButtonRef.current, { x: 100 });
       gsap.set(bannerRef.current, { y: 100 });
 
-      // All animations start simultaneously with same delay
       const animationDelay = 0.5;
 
-      // Heading animation - fade in from top to bottom
       gsap.to(headingRef.current, {
         opacity: 1,
         y: 0,
@@ -49,7 +46,6 @@ const HeroSection = () => {
         delay: animationDelay,
       });
 
-      // Subtext animation - fade in from bottom to top
       gsap.to(subtextRef.current, {
         opacity: 1,
         y: 0,
@@ -58,7 +54,6 @@ const HeroSection = () => {
         delay: animationDelay,
       });
 
-      // Left button animation - from left
       gsap.to(leftButtonRef.current, {
         opacity: 1,
         x: 0,
@@ -67,7 +62,6 @@ const HeroSection = () => {
         delay: animationDelay,
       });
 
-      // Right button animation - from right
       gsap.to(rightButtonRef.current, {
         opacity: 1,
         x: 0,
@@ -76,7 +70,6 @@ const HeroSection = () => {
         delay: animationDelay,
       });
 
-      // Banner slider - fade in from bottom to top
       gsap.to(bannerRef.current, {
         opacity: 1,
         y: 0,
@@ -84,7 +77,6 @@ const HeroSection = () => {
         ease: "power2.out",
         delay: animationDelay,
         onComplete: () => {
-          // Start continuous sliding animation after reveal
           if (sliderRef.current) {
             gsap.to(sliderRef.current, {
               x: "-100%",
@@ -103,68 +95,67 @@ const HeroSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative h-screen bg-black text-white overflow-hidden"
+      className="relative min-h-[100vh] bg-black text-white overflow-hidden px-4 sm:px-6 lg:px-12"
     >
       <Navbar />
-      {/* Fixed Strategic Badge */}
+
+      {/* Background Ellipse */}
       <Image
         src={"/ellipse.svg"}
         alt="ellipse"
-        width={100}
-        height={100}
-        className="w-full h-full absolute -bottom-80"
+        width={1000}
+        height={1000}
+        className="absolute w-[150%] h-auto bottom-[-20rem] left-1/2 transform -translate-x-1/2 pointer-events-none"
       />
+
+      {/* Strategic Badge */}
       <div
         ref={strategicBadgeRef}
-        className="absolute top-44 left-1/2 transform -translate-x-1/2 z-0 bg-gradient-to-r from-white/20 to-black backdrop-blur-sm border-1 border-white/20 rounded-full px-1 py-2 text-sm"
+        className="absolute w-max top-36 md:top-48 left-1/2 transform -translate-x-1/2 z-0 bg-gradient-to-r from-white/20 to-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-2 text-xs sm:text-sm md:text-base"
       >
         <span className="flex items-center gap-2">
           <Image
             src="/about.svg"
             alt="Our Desk"
-            height={32}
-            width={32}
-            className="
-             object-contain"
+            height={28}
+            width={28}
+            className="object-contain"
           />
           Your strategic partner from start to scale
         </span>
       </div>
-      {/* Fixed Eclipse Background */}
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 pt-4">
-        {/* Main Heading */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen  sm:pt-32 lg:pt-20">
+        {/* Heading */}
         <h1
           ref={headingRef}
-          className="text-[30px] md:text-[48px] lg:text-[56px] xl:text-[60px] font-bold text-center max-w-6xl leading-tight mb-2"
+          className="text-center font-bold leading-tight mb-4 text-[32px] sm:text-[40px] md:text-[52px] lg:text-[60px] xl:text-[64px] max-w-6xl"
         >
-          Building and scaling AI
-          <br />
-          solutions is a journey
+          Building and scaling AI <br /> solutions is a journey
         </h1>
 
         {/* Subtext */}
         <p
           ref={subtextRef}
-          className="text-[14px] md:text-[18px] text-gray-300 text-center max-w-3xl mb-6 leading-relaxed"
+          className="text-center text-gray-300 mb-8 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed"
         >
           Lorem ipsum dolor sit amet consectetur. Quam viverra sed urna cursus
-          hendrerit nibh ipsum. Volutpat nunc malesuadas placerat varius nam sed
+          hendrerit nibh ipsum. Volutpat nunc malesuada placerat varius nam sed
           morbi.
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-16">
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-20">
           <button
             ref={leftButtonRef}
-            className="bg-white text-black px-8 py-4 rounded-[16px] font-normal text-lg hover:bg-gray-200 transition-colors duration-300 min-w-[200px]"
+            className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-gray-200 transition-all duration-300 min-w-[180px]"
           >
             Contact With Us
           </button>
           <button
             ref={rightButtonRef}
-            className="border border-white text-white px-8 py-4 rounded-[16px] font-normal text-lg hover:bg-white hover:text-black transition-all duration-300 min-w-[200px]"
+            className="border border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-white hover:text-black transition-all duration-300 min-w-[180px]"
           >
             What is Know AI?
           </button>
@@ -173,48 +164,56 @@ const HeroSection = () => {
         {/* Brand Slider */}
         <div
           ref={bannerRef}
-          className="w-full max-w-2xl  rounded-3xl   px-8 py-6 overflow-hidden"
+          className="w-full max-w-4xl rounded-2xl px-4 sm:px-8 py-4 sm:py-6 overflow-hidden"
         >
           <div
             ref={sliderRef}
-            className="flex items-center justify-center space-x-8 sm:space-x-12 md:space-x-16 whitespace-nowrap"
+            className="flex items-center space-x-8 sm:space-x-12 md:space-x-16 whitespace-nowrap"
             style={{ width: "200%" }}
           >
-            {/* First set of Brand Logos */}
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold">LOGO</span>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-black text-xl font-bold">%</span>
+            {/* Logos (1st loop) */}
+            {["LOGO", "%", "NJ", "Google"].map((item, index) => (
+              <div
+                key={`logo1-${index}`}
+                className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+              >
+                {item === "%" ? (
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-black text-xl font-bold">%</span>
+                  </div>
+                ) : (
+                  <span
+                    className={`text-2xl sm:text-3xl font-bold ${
+                      item === "Google" ? "text-blue-400" : ""
+                    }`}
+                  >
+                    {item}
+                  </span>
+                )}
               </div>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold">NJ</span>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold text-blue-400">
-                Google
-              </span>
-            </div>
+            ))}
 
-            {/* Duplicate set for seamless loop */}
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold">LOGO</span>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-black text-xl font-bold">%</span>
+            {/* Logos (duplicate for loop effect) */}
+            {["LOGO", "%", "NJ", "Google"].map((item, index) => (
+              <div
+                key={`logo2-${index}`}
+                className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
+              >
+                {item === "%" ? (
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-black text-xl font-bold">%</span>
+                  </div>
+                ) : (
+                  <span
+                    className={`text-2xl sm:text-3xl font-bold ${
+                      item === "Google" ? "text-blue-400" : ""
+                    }`}
+                  >
+                    {item}
+                  </span>
+                )}
               </div>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold">NJ</span>
-            </div>
-            <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
-              <span className="text-2xl sm:text-3xl font-bold text-blue-400">
-                Google
-              </span>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ const ServicesSection = () => {
 
   return (
     <motion.div
-      className="relative mx-auto px-4 py-10 bg-[url('/deck.svg')] bg-[length:100%_100%] bg-no-repeat"
+      className="relative mx-auto px-4 py-10 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
