@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Button } from "./navbar/button";
 import Image from "next/image";
 
 // Register ScrollTrigger plugin
