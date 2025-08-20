@@ -21,11 +21,9 @@ declare global {
 }
 
 export default function AIAssistant() {
-  // Properly type the ref as HTMLParagraphElement
   const textRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    // Load GSAP and ScrollTrigger from CDN
     const loadGSAP = () => {
       if (!window.gsap) {
         const script = document.createElement("script");
@@ -50,17 +48,13 @@ export default function AIAssistant() {
     const initAnimation = () => {
       if (!textRef.current || !window.gsap) return;
 
-      // Use a safer approach with GSAP's context to avoid TS errors with innerHTML
       const ctx = window.gsap.context(() => {
-        // Get the current text content
         const content = textRef.current?.textContent || "";
         const words = content.split(" ");
 
-        // Clear the current content
         if (textRef.current) {
           textRef.current.textContent = "";
 
-          // Create and append spans for each word
           words.forEach((word, index) => {
             const span = document.createElement("span");
             span.className = "word";
@@ -70,13 +64,11 @@ export default function AIAssistant() {
 
             textRef.current?.appendChild(span);
 
-            // Add a space after each word (except the last one)
             if (index < words.length - 1) {
               textRef.current?.appendChild(document.createTextNode(" "));
             }
           });
 
-          // Select all word spans and animate them
           const wordSpans = textRef.current.querySelectorAll(".word");
 
           window.gsap.to(wordSpans, {
@@ -91,9 +83,8 @@ export default function AIAssistant() {
             },
           });
         }
-      }, textRef.current); // Scope the context to the text ref
+      }, textRef.current);
 
-      // Clean up the context when component unmounts
       return () => ctx.revert();
     };
 
@@ -101,58 +92,62 @@ export default function AIAssistant() {
   }, []);
 
   return (
-    <main className="bg-black h-fit relative flex py-10 md:py-30 flex-col space-y-12 items-center">
+    <main className="bg-black h-fit relative flex flex-col items-center py-10 md:py-20 lg:py-32 space-y-12">
+      {/* Tag */}
       <div
         className="
-  h-[36px] sm:h-[40px] 
-  flex items-center justify-between 
-  px-[8px] md:px-[6px] 
-  rounded-[32px] border border-[#FFFFFF1A] 
-  bg-gradient-to-r from-white/10 to-transparent 
-  shadow-[inset_0px_1px_10px_0px_rgba(0,0,0,0.25)] 
-  opacity-100 gap-[4px] md:gap-[4px]"
+          h-[36px] sm:h-[40px] 
+          flex items-center justify-between 
+          px-2 sm:px-3 md:px-4 
+          rounded-[32px] border border-[#FFFFFF1A] 
+          bg-gradient-to-r from-white/10 to-transparent 
+          shadow-[inset_0px_1px_10px_0px_rgba(0,0,0,0.25)] 
+          gap-2 sm:gap-3"
       >
         <Image
           src="/about.svg"
           alt="Our Desk"
           height={32}
           width={32}
-          className="w-[28px] h-[28px] md:w-[32px] md:h-[32px] 
-    rounded-[20px] border border-white/10 
-    p-[1px] sm:p-[2px] object-contain"
+          className="w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] md:w-[32px] md:h-[32px] 
+            rounded-[20px] border border-white/10 
+            p-[1px] sm:p-[2px] object-contain"
         />
 
         <span
           className="font-dmSans whitespace-nowrap 
-    font-normal text-[14px] sm:text-[16px] 
-    leading-[100%] text-center text-white"
+            font-normal text-[13px] sm:text-[15px] md:text-[16px] 
+            leading-[100%] text-center text-white"
         >
           About Us
         </span>
       </div>
-      <div>
-        {" "}
+
+      {/* Animated Heading */}
+      <div className="w-full max-w-[1280px] px-4">
         <p
           ref={textRef}
-          className="heading-md my-5 text-center text-[19px] md:text-[60px] leading-tight max-w-[1280]  mx-auto"
+          className="heading-md my-0 md:my-5 text-center 
+            text-[18px] sm:text-[32px] md:text-[48px] lg:text-[60px] 
+            leading-tight mx-auto"
         >
           We provide services to organizations which helps uncover high-impact
           AI opportunities, develop tailored automation systems, and deploy them
           for maximum business benefit
         </p>
       </div>
+
+      {/* Button */}
       <button
         className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-  mt-6 sm:mt-10 
-  h-[50px] sm:h-[60px] lg:h-[70px] 
-  w-[160px] sm:w-[200px] lg:w-[240px] 
-  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-  text-[14px] sm:text-[18px] lg:text-[20px] 
-  py-2 
-  transition-all duration-300 ease-in-out 
-  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
+          sm:mt-8 
+          h-[48px] sm:h-[56px] lg:h-[64px] 
+          w-[150px] sm:w-[200px] lg:w-[240px] 
+          text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
+          text-[14px] sm:text-[16px] lg:text-[20px] 
+          transition-all duration-300 ease-in-out 
+          hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
       >
-        {" "}
         Book an Appointment
       </button>
     </main>

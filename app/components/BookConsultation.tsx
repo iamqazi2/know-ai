@@ -184,7 +184,7 @@ const BookConsultation = () => {
           >
             <button
               className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-                  mt-6 sm:mt-10 
+                  mt-0 sm:mt-10 
                   h-[50px] sm:h-[60px] lg:h-[70px] 
                   w-[160px] sm:w-[200px] lg:w-[240px] 
                   text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
