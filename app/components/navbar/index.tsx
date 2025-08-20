@@ -24,9 +24,9 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Home", icon: Home, href: "#home" },
+    { name: "Home", icon: Home, href: "/" },
     { name: "About", icon: User, href: "#about" },
-    { name: "Contact", icon: Mail, href: "#contact" },
+    { name: "Contact", icon: Mail, href: "/contact" },
     { name: "Portfolio", icon: Briefcase, href: "#portfolio" },
   ];
 
@@ -66,7 +66,7 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            <button className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] text-white px-6 py-2 rounded-[10px] border-1 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
+            <button className="bg-gradient-to-b hidden lg:flex from-[#521ED6] to-[#7E56E2] text-white px-6 py-2 rounded-[10px] border-1 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
               Get in Touch
             </button>
 
@@ -96,7 +96,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 z-100 max-w-sm bg-black/95 backdrop-blur-md border-l border-gray-800 z-50 transform transition-transform duration-500 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-full w-80  max-w-sm bg-black/95 backdrop-blur-md border-l border-gray-800 z-200 transform transition-transform duration-500 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -104,10 +104,7 @@ const Navbar = () => {
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-800">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <div className="w-4 h-4 bg-black rounded-full"></div>
-              </div>
-              <span className="text-white text-xl font-bold">Know AI</span>
+              <Image src={"/logo.svg"} alt="logo" width={160} height={50} />
             </div>
             <button
               onClick={closeDrawer}
