@@ -127,7 +127,7 @@ export default function AIAssistant() {
     font-normal text-[14px] sm:text-[16px] 
     leading-[100%] text-center text-white"
         >
-          Our Deck
+          About Us
         </span>
       </div>
       <div>
@@ -141,7 +141,18 @@ export default function AIAssistant() {
           for maximum business benefit
         </p>
       </div>
-      <button className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] h-[70px] text-white px-6 py-2 text-[20px] font-bold rounded-[10px] border-2 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
+      <button
+        className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
+  mt-6 sm:mt-10 
+  h-[50px] sm:h-[60px] lg:h-[70px] 
+  w-[160px] sm:w-[200px] lg:w-[240px] 
+  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
+  text-[14px] sm:text-[18px] lg:text-[20px] 
+  py-2 
+  transition-all duration-300 ease-in-out 
+  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
+      >
+        {" "}
         Book an Appointment
       </button>
     </main>

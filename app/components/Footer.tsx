@@ -1,4 +1,5 @@
-import Image from "next/image";
+"use client";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -7,26 +8,43 @@ const Footer = () => {
         {/* Top section */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {/* Logo & tagline */}
-          <div className="max-w-68">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="max-w-68"
+          >
             <div className="flex items-center space-x-2 mb-4">
-              <div className=" flex gap-2 items-center justify-center">
-                <Image
-                  src={"/footer-logo.svg"}
-                  alt="logo"
-                  width={160}
-                  height={50}
+              <div className="flex gap-2 items-center justify-center">
+                <img
+                  src="/footer-logo.png"
+                  alt="Krow AI Logo"
+                  className="w-8 h-8 object-contain"
+                />
+                <img
+                  src="/footer-logo1.png"
+                  alt="Krow AI Logo"
+                  className="w-24 h-10 object-contain"
                 />
               </div>
             </div>
-            <p className="leading-normal font-medium text-base  capitalize text-gray-400 w-full">
+            <p className="font-urbanist font-medium text-base leading-1 capitalize text-gray-400 w-full">
               Experts In Identifying The Right AI Opportunities, Designing
               Custom Automation Workflows.
             </p>
-          </div>
+          </motion.div>
 
+          {/* Navigation + Social */}
           <div className="grid grid-cols-2 gap-8">
             {/* Navigation */}
-            <div className="flex flex-col items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-start"
+            >
               <h4 className="font-urbanist font-medium text-lg leading-[130%] text-white mb-4">
                 Navigation
               </h4>
@@ -58,10 +76,16 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </motion.div>
 
             {/* Social */}
-            <div className="flex flex-col  items-start">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-start"
+            >
               <h4 className="font-urbanist font-medium text-lg leading-[130%] text-white mb-4">
                 Social
               </h4>
@@ -88,15 +112,21 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
+
           {/* Subscribe */}
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut", delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <h4 className="font-urbanist font-medium text-lg leading-[130%] text-white mb-5 pl-2">
               Subscribe Us
             </h4>
 
-            <form className="flex w-full max-w-md p-2 rounded-full border border-white/50 font-urbanist font-medium   ">
+            <form className="flex w-full max-w-md rounded-full border border-white/50 font-urbanist font-medium">
               {/* Input */}
               <input
                 type="email"
@@ -105,14 +135,24 @@ const Footer = () => {
               />
 
               {/* Button */}
-              <button className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]  text-white px-6 py-2 text-[20px] font-[400] rounded-full border-2 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
+              <button
+                type="submit"
+                className="px-2 h-8 my-auto mr-2 border border-white/50 text-white rounded-full whitespace-nowrap bg-gradient-to-b from-[#511ED5] to-[#8D6AE6] hover:opacity-90 transition"
+              >
                 Subscribe Us
               </button>
             </form>
-          </div>
+          </motion.div>
         </div>
+
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+          viewport={{ once: true }}
+          className="pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between"
+        >
           <p className="text-gray-400 text-sm">© 2025 Krow AI</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-purple-400 text-sm">
@@ -122,7 +162,7 @@ const Footer = () => {
               Privacy Policy
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

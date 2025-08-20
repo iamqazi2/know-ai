@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "./navbar/button";
 import Image from "next/image";
 
-const ProjectsSection = () => {
+export default function ProjectSection() {
   return (
     <section className="py-16 sm:py-20 px-4 sm:px-6 bg-black">
       <div className="max-w-7xl mx-auto">
@@ -88,22 +88,19 @@ const ProjectsSection = () => {
             viewport={{ once: true }}
             className="w-full flex justify-center mt-1 sm:mt-10 lg:mt-12"
           >
-            <Button
-              className="flex items-center justify-center 
-    gap-[8px] sm:gap-[10px] lg:gap-[12px] 
-    w-[180px] h-[50px] sm:w-[220px] sm:h-[60px] lg:w-[277px] lg:h-[70px] 
-    rounded-[10px] sm:rounded-[14px] lg:rounded-[16px] 
-    border-[2px] sm:border-[3px] lg:border-[4px] 
-    bg-[linear-gradient(180deg,#511ED5_0%,#8D6AE6_100%)] 
-    text-white font-dmSans font-semibold 
-    text-[15px] sm:text-[18px] lg:text-[22px] 
-    leading-[100%] tracking-[-0.02em] text-center
-    px-[20px] sm:px-[32px] lg:px-[40px] 
-    py-[8px] sm:py-[10px] lg:py-[12px] 
-    transition-all duration-300 hover:scale-105"
+            <button
+              className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
+  mt-6 sm:mt-6 
+  h-[50px] sm:h-[60px] lg:h-[70px] 
+  w-[160px] sm:w-[200px] lg:w-[240px] 
+  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
+  text-[14px] sm:text-[18px] lg:text-[20px] 
+  py-2 
+  transition-all duration-300 ease-in-out 
+  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
             >
               View More Projects
-            </Button>
+            </button>
           </motion.div>
         </motion.div>
 
@@ -131,6 +128,4 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
-
-export default ProjectsSection;
+}
