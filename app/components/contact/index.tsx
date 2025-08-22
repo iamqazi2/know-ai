@@ -64,7 +64,7 @@ const ContactSection = () => {
       <Navbar />
       <div
         ref={sectionRef}
-        className="min-h-screen relative flex flex-col items-center bg-[url('/contact-bg.svg')]  justify-center px-4 py-26"
+        className="min-h-screen relative flex flex-col items-center bg-black bg-[url('/contact-bg.svg')]  justify-center px-4 py-26"
       >
         {" "}
         <div
