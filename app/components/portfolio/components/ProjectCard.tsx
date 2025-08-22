@@ -1,6 +1,6 @@
- 
-import { Badge, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 interface ProjectCardProps {
   year: string;
@@ -21,7 +21,7 @@ const ProjectCard = ({
   images,
   className = "",
   style,
-  index = 0
+  index = 0,
 }: ProjectCardProps) => {
   return (
     <motion.div
@@ -30,13 +30,13 @@ const ProjectCard = ({
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
       whileHover={{ y: -10, scale: 1.02 }}
-      className={`group cursor-pointer ${className}`}
+      className={`group cursor-pointer bg-black border border-white/20 rounded-md ${className}`}
       style={style}
     >
-      <div className="bg-blackbackdrop-blur-sm border border-border/50 rounded-3xl p-2 shadow-card hover:shadow-glow transition-all duration-700 relative overflow-hidden">
+      <div className="bg-blackbackdrop-blur-sm  rounded-3xl p-2 shadow-card hover:shadow-glow transition-all duration-700 relative overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-h-full md:max-h-[340px] relative z-10">
           {/* Left Side - Project Info */}
-        <div className="py-6 px-4 sm:px-6 border border-border/50 rounded-3xl h-fit">
+          <div className="py-6 px-4 sm:px-6 border border-border/50 rounded-3xl h-fit">
             {/* Year and Title */}
             <div className="flex flex-row gap-3 items-center">
               <motion.div
@@ -84,32 +84,30 @@ const ProjectCard = ({
 
             {/* Categories */}
             <motion.div
-  className="flex flex-wrap gap-3 pt-6"
-  initial={{ opacity: 0 }}
-  whileInView={{ opacity: 1 }}
-  transition={{ delay: 0.6 }}
->
-  {categories.map((category, categoryIndex) => (
-    <motion.div
-      key={categoryIndex}
-      whileHover={{ scale: 1.1, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <button
-        type="button"
-        className="bg-white/10 text-white/70 border border-white/30 
+              className="flex flex-wrap gap-3 pt-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              {categories.map((category, categoryIndex) => (
+                <motion.div
+                  key={categoryIndex}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <button
+                    type="button"
+                    className="bg-white/10 text-white/70 border border-white/30 
                    px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium 
                    hover:bg-white/20 hover:text-white hover:border-white/50 
                    transition-all duration-300"
-      >
-        {category}
-      </button>
-    </motion.div>
-  ))}
-</motion.div>
-
+                  >
+                    {category}
+                  </button>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
-
 
           {/* Right Side - Images */}
           <div className="md:col-span-2">
@@ -122,13 +120,15 @@ const ProjectCard = ({
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{
                     delay: imageIndex * 0.1 + 0.4,
-                    duration: 0.6
+                    duration: 0.6,
                   }}
                 >
-                  <img
+                  <Image
                     src={image}
                     alt={`${title} - Image ${imageIndex + 1}`}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    width={500}
+                    height={500}
                   />
                 </motion.div>
               ))}

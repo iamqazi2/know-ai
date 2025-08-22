@@ -7,11 +7,9 @@ import FAQSection from "./components/FAQSection";
 export default function PortfolioPages() {
   return (
     <>
-      <div className="relative bg-black">
-        <ProjectSection/>
+        <ProjectSection />
         <FAQSection />
         <CTASection />
-      </div>
     </>
   );
 }
