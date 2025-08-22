@@ -1,7 +1,9 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
+import gsap from "gsap";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 
 const AutomationSection = () => {
   const features = [
@@ -25,6 +27,61 @@ const AutomationSection = () => {
       mainImage: "/aivoiceagent.png",
     },
   ];
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Set initial states
+      gsap.set(headerRef.current, { opacity: 0, y: -50 }); // Header from top
+      gsap.set([titleRef.current, subtitleRef.current], {
+        opacity: 0,
+        y: 50,
+      }); // Text from bottom
+      gsap.set(formRef.current, { opacity: 0, y: 50 }); // Form from bottom
+
+      // Create timeline for simultaneous animations
+      const tl = gsap.timeline();
+
+      // All animations start at the same time
+      tl.to(
+        headerRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        0
+      )
+        .to(
+          [titleRef.current, subtitleRef.current],
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+            stagger: 0.1,
+          },
+          0
+        )
+        .to(
+          formRef.current,
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power3.out",
+          },
+          0.2
+        );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const formatTitle = (title: string) => {
     const words = title.split(" ");
@@ -68,6 +125,56 @@ const AutomationSection = () => {
 
   return (
     <section className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+      <div
+        className="
+              h-[36px] sm:h-[40px] 
+              flex items-center justify-between 
+              px-[8px] md:px-[6px]  w-fit 
+              rounded-[32px] border border-[#FFFFFF1A] 
+              bg-gradient-to-r from-white/10 to-transparent 
+              shadow-[inset_0px_1px_10px_0px_rgba(0,0,0,0.25)] 
+              opacity-100 gap-[4px] md:gap-[4px] mb-8 max-w-[150px] mx-auto "
+      >
+        <Image
+          src="/contacts.svg"
+          alt="Our Desk"
+          height={32}
+          width={32}
+          className="w-[28px] h-[28px] md:w-[32px] md:h-[32px] 
+                rounded-[20px] border border-white/10 
+                p-[1px] sm:p-[2px] object-contain"
+        />
+
+        <span
+          className="font-dmSans whitespace-nowrap 
+                font-normal text-[14px] sm:text-[16px] 
+                leading-[100%] text-center text-white"
+        >
+          Our Services
+        </span>
+      </div>
+      <div className="w-full max-w-4xl mx-auto">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <h1
+            ref={titleRef}
+            className="text-4xl md:text-5xl lg:text-6xl font-[400] text-white mb-6 leading-tight"
+          >
+            Have Any Doubts? We
+            <br />
+            <span className="text-white">are Ready to Help.</span>
+          </h1>
+
+          <p
+            ref={subtitleRef}
+            className="text-white text-base md:text-lg max-w-xl mx-auto leading-relaxed"
+          >
+            Whether you need guidance, support,
+            <br className="hidden sm:block" />
+            or a fresh start, our team is ready to assist you.
+          </p>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto">
         {/* Feature Cards Grid */}
         <motion.div
