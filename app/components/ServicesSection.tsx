@@ -54,8 +54,9 @@ const ServicesSection = () => {
   };
 
   return (
-    <motion.div
-      className="relative w-full py-10 bg-black bg-[url('/deck.svg')] object-fill border-b border-white/10  "
+    <div className="bg-black bg-[url('/deck.svg')] ">
+          <motion.div
+      className="relative w-full py-10 object-fill border-b border-white/10  "
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -63,7 +64,7 @@ const ServicesSection = () => {
     >
       {/* Dark mode indicator */}
       <div
-        className="absolute top-12 sm:top-18 left-1/2 -translate-x-1/2 
+        className="absolute  top-12 sm:top-18 left-1/2 -translate-x-1/2 
          w-fit h-[36px] sm:h-[40px] 
           flex items-center justify-between 
           px-[8px] sm:px-[10px] 
@@ -173,7 +174,9 @@ const ServicesSection = () => {
           <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
         </button>
       </div>
-    </motion.div>
+    </motion.div> 
+    </div>
+
   );
 };
 
