@@ -100,7 +100,7 @@ const ContactSection = () => {
           <div className="text-center mb-12">
             <h1
               ref={titleRef}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-[400] text-white mb-6 leading-tight"
             >
               Have Any Doubts? We
               <br />

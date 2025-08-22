@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -13,23 +14,27 @@ const Footer = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-             
+            className="max-w-68"
           >
             <div className="flex items-center space-x-2 mb-4">
               <div className="flex gap-2 items-center justify-center">
-                <img
+                <Image
+                  height={32}
+                  width={32}
                   src="/footer-logo.png"
                   alt="Krow AI Logo"
                   className="w-8 h-8 object-contain"
                 />
-                <img
+                <Image
+                  height={40}
+                  width={96}
                   src="/footer-logo1.png"
                   alt="Krow AI Logo"
                   className="w-24 h-10 object-contain"
                 />
               </div>
             </div>
-            <p className="font-urbanist font-medium text-base leading-[130%] capitalize text-gray-400 w-full">
+            <p className="font-urbanist font-medium text-base leading-normal capitalize text-gray-400 w-full">
               Experts In Identifying The Right AI Opportunities, Designing
               Custom Automation Workflows.
             </p>
@@ -151,7 +156,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between"
+          className="py-8 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between"
         >
           <p className="text-gray-400 text-sm">© 2025 Krow AI</p>
           <div className="flex space-x-6 mt-4 md:mt-0">

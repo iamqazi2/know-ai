@@ -127,7 +127,7 @@ export default function AIAssistant() {
       <div className="w-full max-w-[1280px] px-4">
         <p
           ref={textRef}
-          className="heading-md my-0 md:my-5 text-center 
+          className="heading-md my-0 md:my-5  text-center 
             text-[18px] sm:text-[32px] md:text-[48px] lg:text-[60px] 
             leading-tight mx-auto"
         >
@@ -144,7 +144,7 @@ export default function AIAssistant() {
           h-[48px] sm:h-[56px] lg:h-[64px] 
           w-[150px] sm:w-[200px] lg:w-[240px] 
           text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-          text-[14px] sm:text-[16px] lg:text-[20px] 
+          text-[12px]  lg:text-[20px] 
           transition-all duration-300 ease-in-out 
           hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
       >

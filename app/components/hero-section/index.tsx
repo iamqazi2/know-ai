@@ -95,7 +95,7 @@ const HeroSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative min-h-[100vh] bg-black text-white overflow-hidden px-4 sm:px-6 lg:px-12"
+      className="relative  bg-black text-white overflow-hidden px-4 sm:px-6 lg:px-12"
     >
       <Navbar />
 
@@ -105,7 +105,7 @@ const HeroSection = () => {
         alt="ellipse"
         width={1000}
         height={1000}
-        className="absolute w-[150%] h-auto bottom-[20rem] sm:bottom-[0] left-1/2 transform -translate-x-1/2 pointer-events-none"
+        className="absolute w-[150%] h-auto bottom-[0rem] sm:bottom-[0] left-1/2 transform -translate-x-1/2 pointer-events-none"
       />
 
       {/* Strategic Badge */}
@@ -126,7 +126,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen  sm:pt-32 lg:pt-20">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] md:min-h-screen  sm:pt-32 lg:pt-20">
         {/* Heading */}
         <h1
           ref={headingRef}
