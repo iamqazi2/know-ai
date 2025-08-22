@@ -55,7 +55,7 @@ const ServicesSection = () => {
 
   return (
     <motion.div
-      className="relative w-full py-10 bg-[url('/deck.svg')] object-fill border-b border-white/10  "
+      className="relative w-full py-10 bg-black bg-[url('/deck.svg')] object-fill border-b border-white/10  "
       initial={{ opacity: 0, y: 80 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -91,7 +91,7 @@ const ServicesSection = () => {
       </div>
 
       {/* Main slider container */}
-      <div className="relative bg-krow-dark mt-8 rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 overflow-hidden">
+      <div className="relative bg-krow-dark mt-16 sm:mt-24 rounded-xl md:rounded-2xl p-4 md:p-6 lg:p-8 overflow-hidden">
         {/* Animate slide content */}
         <div className="relative z-10">
           <AnimatePresence mode="wait">

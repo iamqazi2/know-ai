@@ -125,7 +125,7 @@ const BookConsultation = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-10 sm:py-20 px-4 sm:px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
+      className="py-10 sm:py-20 px-4 sm:px-6 bg-black  bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}

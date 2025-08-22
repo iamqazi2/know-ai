@@ -59,8 +59,8 @@ export default function ProjectSection() {
               text-center text-[28px] sm:text-[36px] lg:text-[62px] 
               font-medium leading-[110%] px-2"
             >
-              <span className="text-foreground block">Showcasing Our Best</span>
-              <span className="opacity-70 block">
+              <span className="text-white block">Showcasing Our Best</span>
+              <span className="text-white opacity-70 block">
                 Projects with Pure Precision
               </span>
             </motion.h2>
@@ -73,10 +73,13 @@ export default function ProjectSection() {
               viewport={{ once: true }}
               className="max-w-xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 
               text-center text-[14px] sm:text-[18px] lg:text-[22px] 
-              font-normal leading-[140%] opacity-50 px-4"
+              font-normal leading-[140%] text-white opacity-50 px-4"
             >
+              <p className="text-white opacity-50">
+                
               A portfolio is more than just projects—it’s your story, vision,
               and expertise. Reboot ensures your work stands out with a rank.
+              </p>
             </motion.p>
           </div>
 

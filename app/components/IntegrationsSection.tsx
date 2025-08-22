@@ -21,7 +21,7 @@ const IntegrationsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
+    <section className="py-20 px-6 bg-black bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
       <div className="max-w-7xl mx-auto text-center">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -56,10 +56,10 @@ const IntegrationsSection = () => {
               text-center text-[28px] sm:text-[36px] lg:text-[62px] 
               font-medium leading-[110%] px-2"
             >
-              <span className="text-foreground block">
+              <span className="text-white block">
                 Seamless Integrations for
               </span>
-              <span className="opacity-70 block">Maximum Efficiency.</span>
+              <span className="text-white opacity-70 block">Maximum Efficiency.</span>
             </motion.h2>
 
             <motion.p
@@ -71,8 +71,11 @@ const IntegrationsSection = () => {
               text-center text-[14px] sm:text-[18px] lg:text-[22px] 
               font-normal leading-[140%] opacity-50 px-4"
             >
+              <p className="text-white opacity-50">
               Know AI seamlessly integrates with leading tools and platforms,
               ensuring a smooth and efficient workflow.
+              </p>
+           
             </motion.p>
           </div>
 
@@ -112,8 +115,8 @@ const IntegrationsSection = () => {
           className="relative w-full overflow-hidden"
         >
           {/* Fade overlays */}
-          <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#0E0C0B] to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#0F0D0D] to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-black to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-black to-transparent z-10" />
 
           <div className="flex animate-slide">
             {[...integrations, ...integrations].map((integration, index) => (
