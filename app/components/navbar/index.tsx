@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, Home, User, Mail, Briefcase } from "lucide-react";
 import Image from "next/image";
@@ -27,7 +28,7 @@ const Navbar = () => {
     { name: "Home", icon: Home, href: "/" },
     { name: "About", icon: User, href: "#about" },
     { name: "Contact", icon: Mail, href: "/contact" },
-    { name: "Portfolio", icon: Briefcase, href: "#portfolio" },
+    { name: "Portfolio", icon: Briefcase, href: "/portfolio" },
   ];
 
   return (
