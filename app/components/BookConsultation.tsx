@@ -158,17 +158,17 @@ const BookConsultation = () => {
               text-center text-[28px] sm:text-[36px] lg:text-[62px] 
               font-medium leading-[110%] px-2"
             >
-              <span className="text-foreground block">
+              <span className="text-white block">
                 Automations for Technology
               </span>
-              <span className="opacity-70 block">Driven Businesses</span>
+              <span className="text-white opacity-70 block">Driven Businesses</span>
             </h2>
 
             {/* Description */}
             <p
               className="max-w-xl sm:max-w-3xl mx-auto mb-6 sm:mb-8 
               text-center text-[14px] sm:text-[18px] lg:text-[22px] 
-              font-normal leading-[140%] opacity-50 px-4"
+              font-normal leading-[140%] text-white opacity-50 px-4"
             >
               A portfolio is more than just projects—it&apos;s your story,
               vision, and expertise. Reboot ensures your work stands out with a
