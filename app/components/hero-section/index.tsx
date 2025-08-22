@@ -126,7 +126,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-[85vh] md:min-h-screen  ">
+      <div className="relative z-10 flex flex-col pt-[100px] items-center justify-center h-[85vh] md:min-h-screen  ">
         {/* Heading */}
         <h1
           ref={headingRef}
