@@ -2,9 +2,9 @@
 import { useEffect, useRef } from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/navbar";
-import AutomationSection from "../components/AutomationSection";
 import FAQSection from "../components/portfolio/components/FAQSection";
 import CTASection from "../components/portfolio/components/CTASection";
+import BookConsultation from "../components/BookConsultation";
 
 export default function ServicePage() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -62,7 +62,7 @@ export default function ServicePage() {
     <>
       <div className="bg-black">
         <Navbar />
-        <AutomationSection />
+        <BookConsultation />
         <FAQSection />
         <CTASection />
         <Footer />

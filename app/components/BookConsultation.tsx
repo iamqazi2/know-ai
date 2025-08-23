@@ -136,7 +136,7 @@ const BookConsultation = () => {
           >
             {/* Top badge */}
             <div
-              className="absolute left-1/2 -translate-x-1/2 top-2 sm:top-8
+              className="absolute left-1/2 -translate-x-1/2 mt-4 top-2 sm:top-8
               flex items-center px-3 sm:px-4 py-1 rounded-full border border-[#FFFFFF1A] 
               bg-gradient-to-r from-white/10 to-transparent shadow-[inset_0px_1px_10px_rgba(0,0,0,0.25)] gap-2"
             >
