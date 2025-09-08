@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="relative py-12 px-6 bg-[url('/footer-bg.png')] bg-[length:100%_100%] bg-no-repeat">
+    <footer className="relative py-12 px-6 bg-[url('/footer-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Top section */}
         <div className="grid md:grid-cols-3 gap-8 mb-12">
