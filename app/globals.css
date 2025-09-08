@@ -99,6 +99,11 @@
   --color-sidebar-ring: 263 70% 60%;
 }
 
+.main-container{
+  max-width: 1260px;
+  margin: auto;
+}
+
 /* Custom utility */
 @utility glow-effect {
   box-shadow: 0 0 16px 8px #4635c6,

@@ -95,7 +95,7 @@ const HeroSection = () => {
   return (
     <div
       ref={containerRef}
-      className="relative  bg-black text-white overflow-hidden px-4 sm:px-6 lg:px-12"
+      className="relative  bg-black text-white overflow-hidden px-4 sm:px-6 lg:px-12 pt-30"
     >
       <Navbar />
 
