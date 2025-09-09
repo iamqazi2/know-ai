@@ -22,6 +22,7 @@ const BookConsultation = () => {
       description:
         "Identify high-impact areas where AI can deliver measurable business value.",
       topImage: "/ai-consulting.png",
+      banner: "/AI_Consulting_icon.png",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const BookConsultation = () => {
       description:
         "Build tailored automation workflows aligned with specific operational needs.",
       topImage: "/ai-solution.png",
+      banner: "/AI_Solution_Development.png",
     },
     {
       id: 3,
@@ -38,6 +40,7 @@ const BookConsultation = () => {
       description:
         "Integrate AI solutions into existing systems for minimal disruption and maximum benefit.",
       topImage: "/seamless-ai.png",
+      banner: "/Seamless_AI_Deployment.png",
     },
     {
       id: 4,
@@ -46,6 +49,7 @@ const BookConsultation = () => {
       description:
         "Replace repetitive manual work with AI-driven, reliable, and fast processes.",
       topImage: "/process-automation.png",
+      banner: "/Process_Automation.png",
     },
     {
       id: 5,
@@ -54,6 +58,7 @@ const BookConsultation = () => {
       description:
         "Use AI insights to streamline workflows, reduce inefficiencies, and boost output.",
       topImage: "/operational.png",
+      banner: "/Operational_Optimization.png",
     },
   ];
 
@@ -161,7 +166,9 @@ const BookConsultation = () => {
               <span className="text-white block">
                 Automations for Technology
               </span>
-              <span className="text-white opacity-70 block">Driven Businesses</span>
+              <span className="text-white opacity-70 block">
+                Driven Businesses
+              </span>
             </h2>
 
             {/* Description */}
@@ -243,7 +250,18 @@ const BookConsultation = () => {
               </p>
 
               {/* Bottom placeholder */}
-              <div className="mt-6 mb-4 h-[180px] md:h-[220px] rounded-xl border border-white/10 bg-black/40"></div>
+              <div className="relative w-full mt-[20px] h-[180px] md:h-[220px] overflow-hidden rounded-xl">
+                <Image
+                  src={project.banner}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                  priority={true}
+                  placeholder="blur"
+                  blurDataURL="/placeholder-image.jpg"
+                />
+              </div>
             </div>
           ))}
         </div>

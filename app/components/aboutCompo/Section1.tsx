@@ -63,7 +63,7 @@ const PortfolioMainSection = () => {
       {" "}
       <div
         ref={sectionRef}
-        className="relative flex flex-col items-center bg-black bg-[url('/contact-bg.svg')]  justify-center px-4 pt-26 pb-10x "
+        className="relative flex flex-col items-center bg-black bg-[url('/contact-bg.svg')]   justify-center px-4 pt-26 pb-[100px] "
       >
         {" "}
         <div
@@ -80,19 +80,14 @@ const PortfolioMainSection = () => {
             className="w-[28px] h-[28px] md:w-[32px] md:h-[32px] rounded-[20px] border border-white/10 p-[1px] sm:p-[2px] object-contain"
           />
 
-          <span
-            className="font-dmSans whitespace-nowrap font-normal text-[14px] sm:text-[16px] leading-[100%] text-center text-white"
-          >
+          <span className="font-dmSans whitespace-nowrap font-normal text-[14px] sm:text-[16px] leading-[100%] text-center text-white">
             Explore Our Journey
-
           </span>
         </div>
-
         <div className="w-full max-w-4xl">
           {/* Header Section */}
 
           <div className="text-center mb-12">
-
             <h1
               ref={titleRef}
               className="text-4xl md:text-5xl lg:text-[60px] font-[400] text-white mb-6 leading-tight"
@@ -106,7 +101,8 @@ const PortfolioMainSection = () => {
               ref={subtitleRef}
               className="text-white text-base md:text-lg max-w-xl mx-auto leading-relaxed"
             >
-            Reboot is your trusted agency for creative strategy. We specialize in cutting-edge digital business solutions.
+              Reboot is your trusted agency for creative strategy. We specialize
+              in cutting-edge digital business solutions.
             </p>
 
             <button
@@ -116,11 +112,8 @@ const PortfolioMainSection = () => {
             >
               View About Reboot
             </button>
-
           </div>
-
         </div>
-
         <Section2 />
       </div>
     </div>
