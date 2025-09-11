@@ -1,6 +1,7 @@
 import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectCardProps {
   year: string;
@@ -11,9 +12,10 @@ interface ProjectCardProps {
   className?: string;
   style?: React.CSSProperties;
   index?: number;
+  id?: number | string;
 }
 
-const ProjectCard = ({
+const ProjectCard: React.FC<ProjectCardProps> = ({
   year,
   title,
   features,
@@ -22,17 +24,19 @@ const ProjectCard = ({
   className = "",
   style,
   index = 0,
-}: ProjectCardProps) => {
+  id = index,
+}) => {
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
-      whileHover={{ y: -10, scale: 1.02 }}
-      className={`group cursor-pointer bg-black border border-white/20 rounded-md ${className}`}
-      style={style}
-    >
+    <Link href={`/portfolio/project/${id}`} className="block">
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, delay: index * 0.2 }}
+        whileHover={{ y: -10, scale: 1.02 }}
+        className={`group bg-black border border-white/20 rounded-md ${className}`}
+        style={style}
+      >
       <div className="bg-blackbackdrop-blur-sm  rounded-3xl p-2 shadow-card hover:shadow-glow transition-all duration-700 relative overflow-hidden">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-h-full md:max-h-[340px] relative z-10">
           {/* Left Side - Project Info */}
@@ -137,6 +141,7 @@ const ProjectCard = ({
         </div>
       </div>
     </motion.div>
+    </Link>
   );
 };
 
