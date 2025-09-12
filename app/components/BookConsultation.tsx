@@ -3,18 +3,23 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const BookConsultation = () => {
+interface BookConsultationProps {
+  currentServiceId?: number;
+}
+
+const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const cardItemsRef = useRef<HTMLDivElement[]>([]);
 
-  const projects = [
+  const allServices = [
     {
       id: 1,
       title: "AI Consulting & Strategy",
@@ -61,6 +66,9 @@ const BookConsultation = () => {
       banner: "/Operational_Optimization.png",
     },
   ];
+  const projects = currentServiceId 
+    ? allServices.filter((s) => s.id !== currentServiceId)
+    : allServices;
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -209,9 +217,9 @@ const BookConsultation = () => {
           ref={cardsRef}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {projects.map((project) => (
+           {projects.map((project) => ( 
+          <Link key={project.id} href={`/services/service/${project.id}`}>
             <div
-              key={project.id}
               ref={addToCardRefs}
               className="relative w-full max-w-[397px] h-auto md:h-[509px] 
                 px-5 pt-6 rounded-[20px] border border-white/10 
@@ -262,7 +270,7 @@ const BookConsultation = () => {
                   blurDataURL="/placeholder-image.jpg"
                 />
               </div>
-            </div>
+            </div></Link>
           ))}
         </div>
       </div>

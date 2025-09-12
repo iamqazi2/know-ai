@@ -1,17 +1,24 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import Image from "next/image";
 
-const FAQSection = () => {
+
+// Props interface to pass custom FAQs
+interface FAQSectionProps {
+  faqs?: { question: string; answer: string }[];
+}
+
+const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = [
+  // Default FAQ list (used when no prop passed)
+  const defaultFaqs = [
     {
       question: "What do I need to get started?",
       answer:
@@ -44,14 +51,17 @@ const FAQSection = () => {
     },
   ];
 
+  // Use passed FAQs or fallback to default
+  const items = faqs ?? defaultFaqs;
+
   return (
     <section
-      className=" px-6 lg:px-8 bg-background relative overflow-hidden py-[80px]"
+      className="px-6 lg:px-8 bg-background relative overflow-hidden py-[80px]"
       id="faq"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Sticky Header */}
+          {/* Left Column */}
           <motion.div
             initial={{ y: 100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -78,7 +88,6 @@ const FAQSection = () => {
                    rounded-[20px] border border-white/10 
                    p-[1px] sm:p-[2px] object-contain "
               />
-
               <span
                 className="font-dmSans px-4 whitespace-nowrap 
                    font-normal text-[14px] sm:text-[16px] 
@@ -103,7 +112,7 @@ const FAQSection = () => {
             </motion.p>
           </motion.div>
 
-          {/* Right Column - Custom FAQ Accordion */}
+          {/* Right Column - Accordion */}
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -111,7 +120,7 @@ const FAQSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="space-y-6">
-              {faqs.map((faq, index) => (
+              {items.map((faq, index) => (
                 <motion.div
                   key={index}
                   initial={{ x: -50, opacity: 0 }}
@@ -141,7 +150,7 @@ const FAQSection = () => {
                         {faq.question}
                       </motion.span>
 
-                      {/* Icon Container */}
+                      {/* Icon */}
                       <motion.div
                         animate={{ rotate: openIndex === index ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
@@ -155,7 +164,7 @@ const FAQSection = () => {
                       </motion.div>
                     </div>
 
-                    {/* Answer Content */}
+                    {/* Answer */}
                     <motion.div
                       initial={false}
                       animate={{
