@@ -8,6 +8,7 @@ import IntegrationsSection from "./components/IntegrationsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import PersonalAssistantSlider from "./components/ServicesSection";
 import BookConsultation from "./components/BookConsultation";
+import Services from "./components/Services";
 
 export default function Home() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -70,6 +71,7 @@ export default function Home() {
       <div className="relative">
         <HeroSection />
         <Articles />
+        <Services />
         <PersonalAssistantSlider />
         <AutomationSection />
         <BookConsultation />
