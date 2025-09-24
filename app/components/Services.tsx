@@ -76,7 +76,7 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="flex gap-8 px-20 justify-center">
+            <div className="flex flex-col md:flex-row gap-8 md:px-20 justify-center">
                 {/* Left Card */}
                 <div className="bg-black rounded-2xl p-8 shadow-lg border-t-2 border border-gray-800">
                     <div className="space-y-4">
@@ -110,7 +110,7 @@ const Services = () => {
                 </div>
 
                 {/* Right Card */}
-                <div className="bg-black rounded-2xl w-[1000px] p-8 shadow-lg border-t-2 border border-gray-800 relative overflow-hidden">
+                <div className="bg-black rounded-2xl md:w-[1000px] p-8 shadow-lg border-t-2 border border-gray-800 relative overflow-hidden">
                     {icons.map((item, index) => {
                         const isGroup1 = group1.includes(index);
                         const shouldAnimate = activeGroup ? isGroup1 : group2.includes(index);
