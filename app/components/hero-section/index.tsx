@@ -99,19 +99,21 @@ const HeroSection = () => {
     >
       <Navbar />
 
-      {/* Background Ellipse */}
-      <Image
-        src={"/ellipse.svg"}
-        alt="ellipse"
-        width={1000}
-        height={1000}
-        className="absolute w-[150%] h-auto bottom-[0rem] sm:bottom-[0] left-1/2 transform -translate-x-1/2 pointer-events-none"
+      <div className="absolute top-20 left-0 w-full h-full bg-gradient-to-b from-[#11003a] to-[#000a2b] z-0"></div>
+
+      <video
+        src="/HomeVideo.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-20 left-0 w-full h-full object-cover opacity-100 z-90 mix-blend-overlay"
       />
 
       {/* Strategic Badge */}
       <div
         ref={strategicBadgeRef}
-        className="absolute w-max top-36 md:top-48 left-1/2 transform -translate-x-1/2 z-0 bg-gradient-to-r from-white/20 to-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-2 text-xs sm:text-sm md:text-base"
+        className=" absolute w-max top-36 md:top-48 left-1/2 transform -translate-x-1/2 z-100 bg-gradient-to-r from-white/20 to-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-2 text-xs sm:text-sm md:text-base"
       >
         <span className="flex items-center gap-2">
           <Image
@@ -126,7 +128,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 flex flex-col pt-[100px] items-center justify-center h-[85vh] md:min-h-screen  ">
+      <div className="relative z-100 flex flex-col pt-[100px] items-center justify-center h-[85vh] md:min-h-screen  ">
         {/* Heading */}
         <h1
           ref={headingRef}
@@ -183,9 +185,8 @@ const HeroSection = () => {
                   </div>
                 ) : (
                   <span
-                    className={`text-2xl sm:text-3xl font-bold ${
-                      item === "Google" ? "text-blue-400" : ""
-                    }`}
+                    className={`text-2xl sm:text-3xl font-bold ${item === "Google" ? "text-blue-400" : ""
+                      }`}
                   >
                     {item}
                   </span>
@@ -205,9 +206,8 @@ const HeroSection = () => {
                   </div>
                 ) : (
                   <span
-                    className={`text-2xl sm:text-3xl font-bold ${
-                      item === "Google" ? "text-blue-400" : ""
-                    }`}
+                    className={`text-2xl sm:text-3xl font-bold ${item === "Google" ? "text-blue-400" : ""
+                      }`}
                   >
                     {item}
                   </span>

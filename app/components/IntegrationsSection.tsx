@@ -20,7 +20,7 @@ const IntegrationsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-black bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden">
+    <section className="py-20 px-6 bg-black bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat overflow-hidden relative">
       <div className="max-w-7xl mx-auto text-center">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
@@ -125,6 +125,40 @@ const IntegrationsSection = () => {
         </motion.div>
       </div>
 
+      <div className="relative m-auto bottom-19 flex items-center justify-center  w-32 h-32">
+      {/* Ripple animation layer */}
+      <motion.div
+        className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
+        initial={{ scale: 0.8, opacity: 0.8 }}
+        animate={{ scale: 2, opacity: 0 }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeOut",
+        }}
+      />
+
+      {/* Another ripple for smoother effect */}
+      <motion.div
+        className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
+        initial={{ scale: 0.8, opacity: 0.8 }}
+        animate={{ scale: 2, opacity: 0 }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeOut",
+          delay: 1, // thoda delay dusre ripple ke liye
+        }}
+      />
+
+      {/* Center Icon */}
+      <div className="relative z-10  shadow-lg">
+        <Image src="/footer-logo.png" alt="logo" width={65} height={65} />
+      </div>
+    </div>
+
       {/* Global CSS animation */}
       <style>{`
         @keyframes slide {
@@ -134,7 +168,7 @@ const IntegrationsSection = () => {
         .animate-slide {
           display: flex;
           width: max-content;
-          animation: slide 20s linear infinite;
+          animation: slide 60s linear infinite;
         }
       `}</style>
     </section>
