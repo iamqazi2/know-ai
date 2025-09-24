@@ -125,7 +125,7 @@ const IntegrationsSection = () => {
         </motion.div>
       </div>
 
-      <div className="relative m-auto bottom-19 flex items-center justify-center  w-32 h-32">
+      <div className="relative m-auto bottom-21 flex items-center justify-center  w-32 h-32">
       {/* Ripple animation layer */}
       <motion.div
         className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
