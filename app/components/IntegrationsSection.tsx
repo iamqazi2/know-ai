@@ -88,7 +88,7 @@ const IntegrationsSection = () => {
                 text-sm  lg:text-lg 
                 py-2 
                 transition-all duration-300 ease-in-out 
-                hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
+                hover:scale-105 transform shadow-lg hover:shadow-purple-500/25 mb-5"
           >
             Get in touch
           </button>
@@ -125,39 +125,65 @@ const IntegrationsSection = () => {
         </motion.div>
       </div>
 
-      <div className="relative m-auto bottom-19 flex items-center justify-center  w-32 h-32">
-      {/* Ripple animation layer */}
+<div className="relative m-auto bottom-20 flex items-center justify-center w-32 h-32">
+      {/* First Ripple - starts immediately */}
       <motion.div
         className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
-        initial={{ scale: 0.8, opacity: 0.8 }}
-        animate={{ scale: 2, opacity: 0 }}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ 
+          scale: [0.8, 2], 
+          opacity: [0, 0.8, 0] 
+        }}
         transition={{
           duration: 3,
           repeat: Infinity,
           repeatType: "loop",
           ease: "easeOut",
+          times: [0, 0.1, 1], // opacity control points
         }}
       />
 
-      {/* Another ripple for smoother effect */}
+      {/* Second Ripple - 1 second delay */}
       <motion.div
         className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
-        initial={{ scale: 0.8, opacity: 0.8 }}
-        animate={{ scale: 2, opacity: 0 }}
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ 
+          scale: [0.8, 2], 
+          opacity: [0, 0.8, 0] 
+        }}
         transition={{
           duration: 3,
           repeat: Infinity,
           repeatType: "loop",
           ease: "easeOut",
-          delay: 1, // thoda delay dusre ripple ke liye
+          delay: 1,
+          times: [0, 0.1, 1], // opacity control points
         }}
       />
 
-      {/* Center Icon */}
-      <div className="relative z-10  shadow-lg">
-        <Image src="/footer-logo.png" alt="logo" width={65} height={65} />
+      {/* Third Ripple for even smoother effect - 2 second delay */}
+      <motion.div
+        className="absolute w-24 h-24 rounded-full bg-[#6c45db]"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ 
+          scale: [0.8, 2], 
+          opacity: [0, 0.8, 0] 
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "loop",
+          ease: "easeOut",
+          delay: 2,
+          times: [0, 0.1, 1], // opacity control points
+        }}
+      />
+
+      {/* Center Icon - placeholder */}
+        <div className="rounded-full relative z-10 flex items-center justify-center text-white font-bold text-xl">
+          <Image src="/footer-logo.png" alt="logo" width={65} height={65}/>
+        </div>
       </div>
-    </div>
 
       {/* Global CSS animation */}
       <style>{`
