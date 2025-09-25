@@ -5,19 +5,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const icons = [
-    { id: 1, Icon: Mail, pos: "top-10 left-20" },
-    { id: 2, Icon: Layers, pos: "top-35 left-55" },
-    { id: 3, Icon: User, pos: "top-30 left-20" },
-    { id: 4, Icon: Command, pos: "top-10 left-45" },
-    { id: 5, Icon: Command, pos: "bottom-40 right-35" },
-    { id: 6, Icon: X, pos: "top-15 right-20" },
-    { id: 8, Icon: Figma, pos: "top-7 right-50" },
+    { id: 1, Icon: Mail, pos: "top-7 left-10" },
+    { id: 2, Icon: Layers, pos: "top-35 left-45" },
+    { id: 3, Icon: User, pos: "top-30 left-10" },
+    { id: 4, Icon: Command, pos: "top-7 left-40" },
+    { id: 5, Icon: Command, pos: "top-35 right-45" },
+    { id: 6, Icon: X, pos: "top-7 right-10" },
+    { id: 7, Icon: Figma, pos: "top-7 right-40" },
+    { id: 8, Icon: Layers, pos: "top-30 right-10" },
 ];
 
 const Services = () => {
 
-    const group1 = [0, 1, 2]; // 3 icons
-    const group2 = [3, 4, 5, 6]; // 4 icons
+    const group1 = [0, 1, 2, 4]; // 3 icons
+    const group2 = [3, 5, 6, 7]; // 4 icons
 
     const [activeGroup, setActiveGroup] = useState<boolean>(true);
 
@@ -32,7 +33,7 @@ const Services = () => {
         active: {
             scale: [0.6, 1, 0.6],
             opacity: [0.4, 1, 0.4],
-            transition: { duration: 2 },
+            transition: { duration: 4 },
         },
         idle: {
             scale: 0.6,
@@ -43,7 +44,7 @@ const Services = () => {
     return (
         <section className="bg-black  bg-[url('/pages-bg.png')] bg-[length:100%_100%] bg-no-repeat text-white py-20 px-6">
 
-            <div className="text-center max-w-3xl mx-auto mb-16 relative">
+            <div className="text-center max-w-3xl mx-auto mb-16 relative ">
                 <div className=" w-fit h-[36px] sm:h-[40px] flex items-center justify-between 
                         px-[8px] sm:px-[10px] rounded-[32px] border border-[#FFFFFF1A] 
                           bg-gradient-to-r from-white/10 to-transparent 
@@ -76,7 +77,7 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-8 md:px-20 justify-center">
+            <div className="flex flex-col md:flex-row gap-8 lg:px-20 justify-center main-container">
                 {/* Left Card */}
                 <div className="bg-black rounded-2xl p-8 shadow-lg border-t-2 border border-gray-800">
                     <div className="space-y-4">
@@ -122,21 +123,27 @@ const Services = () => {
                                 variants={variants}
                                 animate={shouldAnimate ? "active" : "idle"}
                             >
-                                <item.Icon size={36} />
+                                <item.Icon size={28} />
                             </motion.div>
                         );
                     })}
 
                     {/* Center Glow Icon */}
-                    <div className="relative top-5 z-10 flex flex-col items-center justify-center mb-24">
-                        <div className="absolute w-40 h-40 bg-blue-500/20 rounded-full blur-3xl"></div>
-                        <div className="bg-black rounded-full p-6 z-10 shadow-inner shadow-blue-500/30">
-                            <Star size={40} className="text-blue-400" />
+                    <div className="relative top-12 sm:top-8 z-10 flex flex-col items-center justify-center mb-24">
+                        {/* Background Blur Circle */}
+                        <div className="absolute w-24 h-24 sm:w-32 sm:h-32 md:w-18 md:h-18 lg:w-48 lg:h-48 bg-blue-500/20 rounded-full blur-3xl" />
+
+
+                        {/* Icon Container */}
+                        <div className="bg-black rounded-full p-4 sm:p-5 md:p-6 lg:p-8 
+                        z-10 shadow-inner shadow-blue-500/30">
+                            <Star className="text-blue-400 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
                         </div>
                     </div>
 
+
                     {/* Text */}
-                    <div className="mt-8 z-10">
+                    <div className="text-left mt-35 sm:mt-8 md:mt-10">
                         <h3 className="text-xl font-semibold mb-2">Automated Workflows</h3>
                         <p className="text-gray-400 text-sm max-w-md">
                             Boost efficiency across teams with smart automation. Build intelligent workflows

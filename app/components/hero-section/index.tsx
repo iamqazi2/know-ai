@@ -1,9 +1,9 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
 import Navbar from "../navbar";
+import Robot from "../Robot";
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -99,7 +99,7 @@ const HeroSection = () => {
     >
       <Navbar />
 
-      <div className="absolute top-20 left-0 w-full h-full bg-gradient-to-b from-[#11003a] to-[#000a2b] z-0"></div>
+      <div className="absolute top-20 left-0 w-full h-full bg-gradient-to-b from-[#250278] to-[#021964] z-0"></div>
 
       <video
         src="/HomeVideo.mp4"
@@ -115,7 +115,7 @@ const HeroSection = () => {
         ref={strategicBadgeRef}
         className=" absolute w-max top-36 md:top-48 left-1/2 transform -translate-x-1/2 z-100 bg-gradient-to-r from-white/20 to-black/40 backdrop-blur-md border border-white/10 rounded-full px-3 py-2 text-xs sm:text-sm md:text-base"
       >
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 ">
           <Image
             src="/about.svg"
             alt="Our Desk"
@@ -128,7 +128,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-100 flex flex-col pt-[100px] items-center justify-center h-[85vh] md:min-h-screen  ">
+      <div className="relative z-100 flex flex-col pt-[50px] md:pt-[100px] items-center justify-center md:min-h-screen  ">
         {/* Heading */}
         <h1
           ref={headingRef}
@@ -148,7 +148,7 @@ const HeroSection = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-20">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
           <button
             ref={leftButtonRef}
             className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-gray-200 transition-all duration-300 min-w-[180px]"
@@ -164,58 +164,8 @@ const HeroSection = () => {
         </div>
 
         {/* Brand Slider */}
-        <div
-          ref={bannerRef}
-          className="w-full max-w-4xl rounded-2xl px-4 sm:px-8 py-4 sm:py-6 overflow-hidden"
-        >
-          <div
-            ref={sliderRef}
-            className="flex items-center space-x-8 sm:space-x-12 md:space-x-16 whitespace-nowrap"
-            style={{ width: "200%" }}
-          >
-            {/* Logos (1st loop) */}
-            {["LOGO", "%", "NJ", "Google"].map((item, index) => (
-              <div
-                key={`logo1-${index}`}
-                className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
-              >
-                {item === "%" ? (
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-black text-xl font-bold">%</span>
-                  </div>
-                ) : (
-                  <span
-                    className={`text-2xl sm:text-3xl font-bold ${item === "Google" ? "text-blue-400" : ""
-                      }`}
-                  >
-                    {item}
-                  </span>
-                )}
-              </div>
-            ))}
+        <Robot />
 
-            {/* Logos (duplicate for loop effect) */}
-            {["LOGO", "%", "NJ", "Google"].map((item, index) => (
-              <div
-                key={`logo2-${index}`}
-                className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300"
-              >
-                {item === "%" ? (
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-black text-xl font-bold">%</span>
-                  </div>
-                ) : (
-                  <span
-                    className={`text-2xl sm:text-3xl font-bold ${item === "Google" ? "text-blue-400" : ""
-                      }`}
-                  >
-                    {item}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );
