@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
 import Articles from "./components/about";
-import AutomationSection from "./components/AutomationSection";
 import Footer from "./components/Footer";
 import HeroSection from "./components/hero-section";
 import IntegrationsSection from "./components/IntegrationsSection";
@@ -9,7 +8,7 @@ import ProjectsSection from "./components/ProjectsSection";
 import PersonalAssistantSlider from "./components/ServicesSection";
 import BookConsultation from "./components/BookConsultation";
 import Services from "./components/Services";
-import NewSection from "./components/NewSection";
+import AutomationSection from "./components/AutomationSection";
 
 export default function Home() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -74,7 +73,7 @@ export default function Home() {
         <Articles />
         <Services />
         <PersonalAssistantSlider />
-        <NewSection />
+        <AutomationSection />
         <BookConsultation />
         <ProjectsSection />
         <IntegrationsSection />
