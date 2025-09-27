@@ -14,7 +14,11 @@ const cardData = [
     },
     {
         image: "/trustedauthenticationtop.png",
-        title: "Trusted Authentication",
+        title: (
+            <>
+               Trusted <br /> Authentication
+            </>
+        ),
         description: "Quality systems and robust performance to workflows.",
         Component: SliderCard,
     },
