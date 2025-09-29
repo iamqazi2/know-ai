@@ -1,7 +1,34 @@
 "use client";
 import { motion } from "framer-motion";
-import { Button } from "./navbar/button";
 import Image from "next/image";
+import ProjectCard from "./portfolio/components/ProjectCard";
+
+const projects = [
+  {
+    id: 1,
+    year: "2024",
+    title: "Project 1",
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    categories: ["Category 1"],
+    images: ["/Mockups/slaycanvas1.jpg", "/Mockups/slaycanvas.jpg"],
+  },
+  {
+    id: 2,
+    year: "2024",
+    title: "Project 2",
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    categories: ["Category 2"],
+    images: ["/icons/3.jpg", "/Mockups/youtube.jpg"],
+  },
+  {
+    id: 3,
+    year: "2024",
+    title: "Project 3",
+    features: ["Feature 1", "Feature 2", "Feature 3"],
+    categories: ["Category 3"],
+    images: ["/Mockups/wordpress.jpg", "/icons/1.jpg"],
+  },
+];
 
 export default function ProjectSection() {
   return (
@@ -76,9 +103,8 @@ export default function ProjectSection() {
               font-normal leading-[140%] text-white opacity-50 px-4"
             >
               <p className="text-white opacity-50">
-                
-              A portfolio is more than just projects—it’s your story, vision,
-              and expertise. Reboot ensures your work stands out with a rank.
+                A portfolio is more than just projects—it’s your story, vision,
+                and expertise. Reboot ensures your work stands out with a rank.
               </p>
             </motion.p>
           </div>
@@ -107,26 +133,20 @@ export default function ProjectSection() {
           </motion.div>
         </motion.div>
 
-        {/* Project Images */}
-        <div className="flex flex-col items-center justify-center gap-1 sm:gap-5">
-          {["/project1.png", "/project2.png", "/project3.png"].map(
-            (src, idx) => (
-              <motion.img
-                key={src}
-                src={src}
-                alt={`Project ${idx + 1}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  ease: "easeOut",
-                  delay: 0.2 * idx,
-                }}
-                viewport={{ once: true }}
-                className="w-full max-w-[1100px] object-contain"
-              />
-            )
-          )}
+        {/* Project Cards */}
+        <div className="space-y-4">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.id}
+              id={project.id}
+              year={project.year}
+              title={project.title}
+              features={project.features}
+              categories={project.categories}
+              images={project.images}
+              index={index}
+            />
+          ))}
         </div>
       </div>
     </section>

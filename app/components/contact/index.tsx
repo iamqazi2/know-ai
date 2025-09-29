@@ -60,7 +60,11 @@ const ContactSection = () => {
 
   return (
     <div>
-      {" "}
+      <style jsx global>{`
+        #full_name_input {
+          background: #000 !important;
+        }
+      `}</style>
       <Navbar />
       <div
         ref={sectionRef}
@@ -131,6 +135,7 @@ const ContactSection = () => {
                     First Name*
                   </label>
                   <input
+                    id="full_name_input"
                     type="text"
                     placeholder="Enter your Email"
                     className="w-full bg-transparent border border-white/40 rounded-lg px-4 py-3.5 text-white placeholder-white/40 focus:outline-none focus:border-purple-400 focus:ring-1 focus:ring-purple-400/50 transition-all duration-300"

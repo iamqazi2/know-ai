@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../navbar";
 import Robot from "../Robot";
 
@@ -149,12 +150,14 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-          <button
-            ref={leftButtonRef}
-            className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-gray-200 transition-all duration-300 min-w-[180px]"
-          >
-            Contact With Us
-          </button>
+          <Link href="/book-meetings">
+            <button
+              ref={leftButtonRef}
+              className="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-gray-200 transition-all duration-300 min-w-[180px]"
+            >
+              Contact With Us
+            </button>
+          </Link>
           <button
             ref={rightButtonRef}
             className="border border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-[16px] font-medium text-base sm:text-lg hover:bg-white hover:text-black transition-all duration-300 min-w-[180px]"

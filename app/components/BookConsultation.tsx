@@ -27,7 +27,7 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
       description:
         "Identify high-impact areas where AI can deliver measurable business value.",
       topImage: "/ai-consulting.png",
-      banner: "/AI_Consulting_icon.png",
+      banner: "/Graphics/AI-consulting.jpg",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
       description:
         "Build tailored automation workflows aligned with specific operational needs.",
       topImage: "/ai-solution.png",
-      banner: "/AI_Solution_Development.png",
+      banner: "/Graphics/AI-solutions.png",
     },
     {
       id: 3,
@@ -45,7 +45,7 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
       description:
         "Integrate AI solutions into existing systems for minimal disruption and maximum benefit.",
       topImage: "/seamless-ai.png",
-      banner: "/Seamless_AI_Deployment.png",
+      banner: "/Graphics/seamless.png",
     },
     {
       id: 4,
@@ -54,7 +54,7 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
       description:
         "Replace repetitive manual work with AI-driven, reliable, and fast processes.",
       topImage: "/process-automation.png",
-      banner: "/Process_Automation.png",
+      banner: "/Graphics/process.png",
     },
     {
       id: 5,
@@ -63,10 +63,10 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
       description:
         "Use AI insights to streamline workflows, reduce inefficiencies, and boost output.",
       topImage: "/operational.png",
-      banner: "/Operational_Optimization.png",
+      banner: "/Graphics/operational.png",
     },
   ];
-  const projects = currentServiceId 
+  const projects = currentServiceId
     ? allServices.filter((s) => s.id !== currentServiceId)
     : allServices;
 
@@ -169,14 +169,9 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
             <h2
               className="mt-20 sm:mt-28 mb-4 sm:mb-6 
               text-center text-[28px] sm:text-[36px] lg:text-[62px] 
-              font-medium leading-[110%] px-2"
+              font-medium leading-[110%] px-2 max-w-[950px] mx-auto text-white"
             >
-              <span className="text-white block">
-                Automations for Technology
-              </span>
-              <span className="text-white opacity-70 block">
-                Driven Businesses
-              </span>
+              Automations for Technology-Driven Businesses.
             </h2>
 
             {/* Description */}
@@ -185,9 +180,11 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
               text-center text-[14px] sm:text-[18px] lg:text-[22px] 
               font-normal leading-[140%] text-white opacity-50 px-4"
             >
-              A portfolio is more than just projects—it&apos;s your story,
-              vision, and expertise. Reboot ensures your work stands out with a
-              rank.
+              We specialize in building tailored AI-powered workflows that
+              optimize operations, reduce manual effort, and accelerate growth.
+              Whether you’re in finance, e-commerce, healthcare, or corporate
+              services, our automation solutions are designed to scale with your
+              business.
             </p>
           </div>
 
@@ -196,19 +193,21 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
             ref={buttonRef}
             className="w-full flex justify-center mt-1 sm:mt-10 lg:mt-12"
           >
-            <button
-              className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-                  mt-0 sm:mt-10 
-                  h-[50px] sm:h-[60px] lg:h-[70px] 
-                  w-[160px] sm:w-[200px] lg:w-[240px] 
-                  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-                  text-[14px] sm:text-[18px] lg:text-[20px] 
-                  py-2 
-                  transition-all duration-300 ease-in-out 
-                  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
-            >
-              Book a Consultation
-            </button>
+            <Link href="/book-meetings">
+              <button
+                className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+                    mt-0 sm:mt-10
+                    h-[50px] sm:h-[60px] lg:h-[70px]
+                    w-[160px] sm:w-[200px] lg:w-[240px]
+                    text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
+                    text-[14px] sm:text-[18px] lg:text-[20px]
+                    py-2
+                    transition-all duration-300 ease-in-out
+                    hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
+              >
+                Book a Consultation
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -217,60 +216,61 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
           ref={cardsRef}
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-           {projects.map((project) => ( 
-          <Link key={project.id} href={`/services/service/${project.id}`}>
-            <div
-              ref={addToCardRefs}
-              className="relative w-full max-w-[397px] h-auto md:h-[509px] 
+          {projects.map((project) => (
+            <Link key={project.id} href={`/services/service/${project.id}`}>
+              <div
+                ref={addToCardRefs}
+                className="relative w-full max-w-[397px] h-auto md:h-[509px] 
                 px-5 pt-6 rounded-[20px] border border-white/10 
                 bg-black/20 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] 
                 transition-all duration-300 group mx-auto"
-            >
-              {/* Top row with icon + arrow */}
-              <div className="flex justify-between">
-                <Image
-                  width={80}
-                  height={80}
-                  src={project.topImage}
-                  alt={project.title}
-                  className="w-20 h-20 -mt-1 -ml-4 object-contain"
-                />
-                <Image
-                  width={32}
-                  height={32}
-                  src="/right-arrow.png"
-                  alt="Arrow"
-                  className="w-12 h-12 mt-1 object-contain"
-                />
+              >
+                {/* Top row with icon + arrow */}
+                <div className="flex justify-between">
+                  <Image
+                    width={80}
+                    height={80}
+                    src={project.topImage}
+                    alt={project.title}
+                    className="w-20 h-20 -mt-1 -ml-4 object-contain"
+                  />
+                  <Image
+                    width={32}
+                    height={32}
+                    src="/right-arrow.png"
+                    alt="Arrow"
+                    className="w-12 h-12 mt-1 object-contain"
+                  />
+                </div>
+
+                {/* Title + Category */}
+                <h3 className="text-[22px] sm:text-[24px] lg:text-[28px] font-urbanist font-medium text-white leading-[100%] mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-[14px] sm:text-[16px] lg:text-[18px] font-urbanist font-normal capitalize text-white/50 w-fit rounded mb-4">
+                  {project.category}
+                </p>
+
+                {/* Description */}
+                <p className="text-[13px] sm:text-[14px] font-dmSans font-normal text-white/50 leading-[140%] mt-6 sm:mt-10">
+                  {project.description}
+                </p>
+
+                {/* Bottom placeholder */}
+                <div className="relative w-full mt-[20px] h-[180px] md:h-[220px] overflow-hidden rounded-xl">
+                  <Image
+                    src={project.banner}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 400px"
+                    className="object-cover rounded-xl transition-transform duration-300 hover:scale-105"
+                    priority={true}
+                    placeholder="blur"
+                    blurDataURL="/placeholder-image.jpg"
+                  />
+                </div>
               </div>
-
-              {/* Title + Category */}
-              <h3 className="text-[22px] sm:text-[24px] lg:text-[28px] font-urbanist font-medium text-white leading-[100%] mb-2">
-                {project.title}
-              </h3>
-              <p className="text-[14px] sm:text-[16px] lg:text-[18px] font-urbanist font-normal capitalize text-white/50 w-fit rounded mb-4">
-                {project.category}
-              </p>
-
-              {/* Description */}
-              <p className="text-[13px] sm:text-[14px] font-dmSans font-normal text-white/50 leading-[140%] mt-6 sm:mt-10">
-                {project.description}
-              </p>
-
-              {/* Bottom placeholder */}
-              <div className="relative w-full mt-[20px] h-[180px] md:h-[220px] overflow-hidden rounded-xl">
-                <Image
-                  src={project.banner}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover rounded-xl transition-transform duration-300 hover:scale-105"
-                  priority={true}
-                  placeholder="blur"
-                  blurDataURL="/placeholder-image.jpg"
-                />
-              </div>
-            </div></Link>
+            </Link>
           ))}
         </div>
       </div>

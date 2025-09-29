@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Home, User, Mail, Briefcase } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,7 @@ const Navbar = () => {
   };
 
   const navItems = [
-    { name: "Home", icon: Home, href: "/" },
-    { name: "About",icon: Mail, href: "/about"},
+    { name: "About", icon: Mail, href: "/about" },
     { name: "Services", icon: User, href: "/services" },
     { name: "Contact", icon: Mail, href: "/contact" },
     { name: "Portfolio", icon: Briefcase, href: "/portfolio" },
@@ -46,7 +46,10 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <a href={"/"} className="flex items-center space-x-2">
+            <a
+              href={"/"}
+              className="flex cursor-pointer items-center space-x-2"
+            >
               <Image src={"/logo.svg"} alt="logo" width={160} height={50} />
             </a>
 
@@ -69,9 +72,11 @@ const Navbar = () => {
                 </a>
               ))}
             </div>
-            <button className="bg-gradient-to-b hidden lg:flex from-[#521ED6] to-[#7E56E2] text-white px-6 py-2 rounded-[10px] border-1 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
-              Get in Touch
-            </button>
+            <Link href="/book-meetings">
+              <button className="bg-gradient-to-b hidden lg:flex from-[#521ED6] to-[#7E56E2] text-white px-6 py-2 rounded-[10px] border-1 border-[#8D6AE6] transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25">
+                Get in Touch
+              </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
@@ -161,17 +166,21 @@ const Navbar = () => {
 
           {/* Drawer Footer */}
           <div className="p-6 border-t border-gray-800">
-            <button
-              onClick={closeDrawer}
-              className={`w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25 ${
-                isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{
-                transitionDelay: isOpen ? "600ms" : "0ms",
-              }}
-            >
-              Get in Touch
-            </button>
+            <Link href="/book-meetings">
+              <button
+                onClick={closeDrawer}
+                className={`w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25 ${
+                  isOpen
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4"
+                }`}
+                style={{
+                  transitionDelay: isOpen ? "600ms" : "0ms",
+                }}
+              >
+                Get in Touch
+              </button>
+            </Link>
           </div>
         </div>
       </div>

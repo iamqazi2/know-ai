@@ -50,27 +50,27 @@ const Section3 = () => {
 
   const cardsData = [
     {
-      tag: "Innovate",
-      title: "Built for Cutting-Edge AI Teams",
+      tag: "Lead AI",
+      title: "Dr. Sarah Chen - Chief AI Officer",
       description:
-        "Whether you're developing LLMs, intelligent tools, or autonomous agents, Nubien gives you a launch-ready site that speaks the language of innovation. The layout is purpose-built to help you showcase your services, and vision clearly.",
-      buttons: ["AI Agency", "Future Ready"],
+        "Leading our AI research initiatives with 15+ years in machine learning and deep neural networks. Sarah spearheads our breakthrough models and ensures cutting-edge innovation in every project we deliver.",
+      buttons: ["AI Research", "Neural Networks"],
       singleButton: false,
     },
     {
-      tag: "Trust",
-      title: "Designed to Build Instant Trust",
+      tag: "ML Expert",
+      title: "Marcus Rodriguez - Head of Machine Learning",
       description:
-        "Nubien is crafted with clean typography, smooth transitions, and modern layouts that convey credibility at first glance. Perfect for agencies and startups needing to look established and reliable from day one.",
-      buttons: ["Trust By Design", "Modern UX"],
+        "Expert in large language models and natural language processing with extensive experience at Google DeepMind. Marcus transforms complex AI concepts into scalable solutions for enterprise clients.",
+      buttons: ["LLM Specialist", "NLP Expert"],
       singleButton: false,
     },
     {
-      tag: "Scale",
-      title: "Scales With Your Vision",
+      tag: "Vision",
+      title: "Alex Kim - Computer Vision Lead",
       description:
-        "From product launches to team showcases and case studies, Nubien is flexible and scalable. As your agency grows, the template adapts—so your site evolves without needing a redesign.",
-      buttons: ["Book an Appointment"],
+        "Pioneering computer vision applications and autonomous systems development. With a PhD from Stanford AI Lab, Alex drives our visual intelligence projects and robotics integrations.",
+      buttons: ["Schedule Meeting"],
       singleButton: true,
     },
   ];
@@ -104,19 +104,19 @@ const Section3 = () => {
               <FaFingerprint size={12} className="text-white text-xl" />
             </div>
 
-            <span className="text-sm font-medium">About Nubien</span>
+            <span className="text-sm font-medium">Our AI Team</span>
           </div>
 
           {/* Heading */}
           <div>
             <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-              Shaping Tomorrow <br />
-              <span className="text-gray-300">With Bold Ideas</span>
+              Meet Our AI <br />
+              <span className="text-gray-300">Research Leaders</span>
             </h2>
             <p className="mt-4 text-gray-400  lg:max-w-lg">
-              Nubien is a next-gen AI agency template built for bold
-              visionaries, researchers, and builders shaping the future of
-              intelligence.
+              Our world-class team of AI researchers, engineers, and visionaries
+              are pushing the boundaries of artificial intelligence and machine
+              learning.
             </p>
           </div>
 
@@ -129,18 +129,19 @@ const Section3 = () => {
               >
                 <div className="relative flex flex-col gap-5 p-6 rounded-2xl bg-gradient-to-br from-purple-950/30 to-transparent transition w-full lg:w-120">
                   <div className="flex justify-between items-center mb-4">
-                    <div
-                      className="p-4 rounded shadow-[0_0_5px_rgba(140,0,255,0.6)]
+                    {/* <div
+                      className="w-[60px] h-[60px] rounded shadow-[0_0_5px_rgba(140,0,255,0.6)]
                      bg-gradient-to-br from-purple-700/30 via-black to-black"
                     >
                       <Image
-                        src="/icon5.png"
+                        src="/AboutSec3.avif"
                         alt="cat"
                         width={20}
                         height={20}
+                        className="w-[60px] h-[60px] object-contain"
                       />
-                    </div>
-                    <span className="text-sm px-5 py-2 rounded-full bg-gray-900">
+                    </div> */}
+                    <span className="text-sm shadow-[0_0_5px_rgba(140,0,255,0.6)] px-5 py-2 rounded-full     bg-gradient-to-br from-purple-700/30 via-black to-black">
                       {item.tag}
                     </span>
                   </div>

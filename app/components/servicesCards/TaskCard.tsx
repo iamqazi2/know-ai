@@ -1,32 +1,43 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CheckCircle, RefreshCw, Clock } from "lucide-react";
+import {
+  Calendar,
+  UserCheck,
+  DollarSign,
+  MessageCircle,
+  FileText,
+  Users,
+} from "lucide-react";
 
 const tasks = [
   {
-    label: "Social media post",
-    icon: <CheckCircle size={18} />,
-    status: "done",
+    label: " Social Media Posting & Scheduling",
+    icon: <Calendar size={18} />,
   },
   {
-    label: "Employee Tracking",
-    icon: <RefreshCw size={18} />,
-    status: "loading",
+    label: "Employee Attendance & Tracking",
+    icon: <UserCheck size={18} />,
   },
   {
-    label: "Payment reminder",
-    icon: <Clock size={18} />,
-    status: "done",
+    label: "Payment & Invoice Reminders",
+    icon: <DollarSign size={18} />,
   },
   {
-    label: "Cost Management",
-    icon: <Clock size={18} />,
-    status: "done",
+    label: "Customer Support Chatbots",
+    icon: <MessageCircle size={18} />,
+  },
+  {
+    label: "Data Entry & Reporting",
+    icon: <FileText size={18} />,
+  },
+  {
+    label: "Lead Management & CRM Updates",
+    icon: <Users size={18} />,
   },
 ];
 
-const ITEM_HEIGHT = 72;
+const ITEM_HEIGHT = 40;
 
 const TaskCard = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -58,36 +69,48 @@ const TaskCard = () => {
   const middleSlot = 1; // assuming 3 items visible, center is index 1
 
   return (
-    <div className="bg-black rounded-2xl px-4 pb-5 shadow-lg border-t-2 border border-gray-800">
+    <div className="bg-black/10 rounded-2xl px-4 pb-5 shadow-lg border-t-2 border border-[#8D6AE6]/20">
       <div className="relative overflow-hidden mx-1 h-[260px]">
         <div
           className="transition-transform duration-700 ease-in-out space-y-4 py-4"
           style={{
-            transform: `translateY(${(middleSlot - activeIndex) * ITEM_HEIGHT}px)`,
+            transform: `translateY(${
+              (middleSlot - activeIndex) * ITEM_HEIGHT
+            }px)`,
           }}
         >
           {tasks.map((task, index) => (
             <div
               key={index}
-              className={`flex items-center justify-between border border-t-2 border-white/30 rounded-[6px] p-2 transform transition-all duration-500 ease-in-out
-                ${index === activeIndex ? "scale-100 bg-zinc-800 z-10" : "scale-90 opacity-60"}
+              className={`relative flex items-center justify-between border text-white border-t-2 border-[#8D6AE6]/30 rounded-[6px] p-2 transform transition-all duration-500 ease-in-out
+                ${
+                  index === activeIndex
+                    ? "scale-100 bg-[#8D6AE6]/30 backdrop-blur-md z-10"
+                    : "scale-90 opacity-60 text-white blur-[.8px] "
+                }
               `}
             >
-              <span className="flex items-center gap-2 text-gray-300">
+              <span className="flex items-center text-[12px] gap-2 text-white">
                 {task.icon} {task.label}
               </span>
-              {task.status === "done" && (
-                <CheckCircle className="text-green-400" size={18} />
+              {index !== activeIndex && (
+                <div className="absolute inset-0 bg-black/20 pointer-events-none rounded-[6px]"></div>
               )}
+              {/* {task.status === "done" && (
+                <CheckCircle className="text-green-400" size={18} />
+              )} */}
             </div>
           ))}
         </div>
       </div>
 
       <div className="mt-6">
-        <h3 className="text-xl font-semibold mb-2">Automate repetitive tasks</h3>
+        <h3 className="text-xl font-semibold mb-2">
+          Automate repetitive tasks
+        </h3>
         <p className="text-gray-400 text-sm">
-          We help you streamline internal operations by automating manual workflows
+          We help you streamline internal operations by automating manual
+          workflows
         </p>
       </div>
     </div>

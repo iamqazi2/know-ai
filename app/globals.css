@@ -40,9 +40,18 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius: 1rem;
 
-  --gradient-primary: linear-gradient(135deg, hsl(263 70% 60%), hsl(263 70% 70%));
-  --gradient-hero: linear-gradient(135deg, hsl(228 8% 4%) 0%, hsl(263 40% 8%) 50%, hsl(228 8% 4%) 100%);
-  
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(263 70% 60%),
+    hsl(263 70% 70%)
+  );
+  --gradient-hero: linear-gradient(
+    135deg,
+    hsl(228 8% 4%) 0%,
+    hsl(263 40% 8%) 50%,
+    hsl(228 8% 4%) 100%
+  );
+
   --shadow-glow: 0 0 40px hsl(263 70% 60% / 0.3);
   --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
 
@@ -99,16 +108,15 @@
   --color-sidebar-ring: 263 70% 60%;
 }
 
-.main-container{
+.main-container {
   max-width: 1260px;
   margin: auto;
 }
 
 /* Custom utility */
 @utility glow-effect {
-  box-shadow: 0 0 16px 8px #4635c6,
-              0 0 32px 10px #4635c666,
-              0 0 48px 12px #4635c633;
+  box-shadow: 0 0 16px 8px #4635c6, 0 0 32px 10px #4635c666,
+    0 0 48px 12px #4635c633;
 }
 
 /* Base styles */
@@ -149,23 +157,32 @@
   animation: slide-right 10s linear infinite;
 }
 
-
-.scrollbar::-webkit-scrollbar{
+.scrollbar::-webkit-scrollbar {
   display: none;
 }
 
 @keyframes wave {
-  0%, 100% { height: 10px; }
-  50% { height: 40px; }
+  0%,
+  100% {
+    height: 10px;
+  }
+  50% {
+    height: 40px;
+  }
 }
 .wave-bar {
   animation: wave 1s infinite ease-in-out;
 }
 
 @keyframes progressMove {
-  from { left: 0%; }
-  to { left: 100%; }
+  from {
+    left: 0%;
+  }
+  to {
+    left: 100%;
+  }
 }
 .progress-line {
   animation: progressMove 5s linear infinite;
 }
+

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const CTASection = () => {
   return (
@@ -74,7 +75,7 @@ const CTASection = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[100%] h-[20%] bg-gradient-to-t from-[#521ED6]/40 to-transparent blur-xl"
+            className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-[100%] h-[20%] bg-gradient-to-t from-[#521ED6]/90 to-transparent blur-xl"
             animate={{
               opacity: [0.2, 0.6, 0.2],
               scale: [1.1, 1, 1.1],
@@ -87,7 +88,7 @@ const CTASection = () => {
             }}
           />
           <motion.div
-            className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[15%] bg-gradient-to-t from-[#7E56E2]/60 to-transparent blur-3xl rounded-full"
+            className="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-[80%] h-[15%] bg-gradient-to-t from-[#7E56E2]/90 to-transparent blur-3xl rounded-full"
             animate={{
               opacity: [0.1, 0.4, 0.1],
               x: [20, -20, 20],
@@ -123,31 +124,33 @@ const CTASection = () => {
 
           {/* Content */}
           <div className="relative z-10 mt-24 sm:mt-28">
-            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 sm:mb-8 leading-tight">
-              Ready to Elevate Your Brand <br />
-              <span className="text-gray-400 font-normal">
-                with Next-Gen Innovation?
-              </span>
+            <h2 className="text-white text-2xl sm:text-3xl max-w-[750px] mx-auto md:text-4xl lg:text-5xl font-semibold mb-6 sm:mb-8 leading-tight">
+              Ready to Elevate Your Brand with Next-Gen AI Solutions?
             </h2>
 
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto text-sm sm:text-base md:text-lg">
-              Ready to take the next step? Join us now and start transforming
-              your vision into reality with expert support.
+              At our agency, we transform your vision into intelligent realities
+              powered by automation. From strategy to execution, we help
+              businesses embrace AI-driven efficiency, unlocking new
+              opportunities and accelerating growth. Book a consultation today
+              and take the first step toward smarter innovation.
             </p>
 
-            <button
-              className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-                mt-4 sm:mt-6 
-                h-[50px] sm:h-[60px] lg:h-[70px] 
-                w-[160px] sm:w-[220px] lg:w-[260px] 
-                text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-                text-sm sm:text-base lg:text-lg 
-                py-2 
-                transition-all duration-300 ease-in-out 
-                hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
-            >
-              Book an Appointment
-            </button>
+            <Link href="/book-meetings">
+              <button
+                className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+                  mt-4 sm:mt-6
+                  h-[50px] sm:h-[60px] lg:h-[70px]
+                  w-[160px] sm:w-[220px] lg:w-[260px]
+                  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
+                  text-sm sm:text-base lg:text-lg
+                  py-2
+                  transition-all duration-300 ease-in-out
+                  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
+              >
+                Book an Appointment
+              </button>
+            </Link>
           </div>
         </motion.div>
       </div>

@@ -54,7 +54,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="bg-black bg-[url('/deck.svg')] ">
+    <div className="bg-black bg-[url('/deck.svg')] bg-no-repeat bg-cover bg-center py-10 sm:py-20 px-4 sm:px-6">
       <motion.div
         className="relative w-full pt-10 object-fill  "
         initial={{ opacity: 0, y: 80 }}
@@ -105,9 +105,14 @@ const ServicesSection = () => {
               >
                 {/* Video placeholder */}
                 <div className="mb-6 flex justify-center">
-                  <div className="w-full max-w-[840px] h-[200px] sm:h-[260px] md:h-[320px] lg:h-[376px] bg-gray-300 rounded-[10px] flex items-center justify-center text-gray-500 text-xs sm:text-sm md:text-base font-medium">
-                    Video Content
-                  </div>
+                  <iframe
+                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
+                    width="100%"
+                    height="600"
+                    src="https://embed.figma.com/proto/EHrFTbrqonOn4QJa2N6Zex/N8N?node-id=908-209398&scaling=scale-down-to-fit&content-scaling=fixed&page-id=64%3A13238&starting-point-node-id=727%3A106039&show-proto-sidebar=0&hide-ui=true&transparent=true&embed-host=share"
+                    // allowFullScreen
+                    className="max-w-[800px]  rounded-lg"
+                  ></iframe>
                 </div>
 
                 {/* Text content */}
@@ -118,21 +123,6 @@ const ServicesSection = () => {
                   <p className="font-dmSans font-normal text-sm sm:text-base md:text-lg lg:text-[18px] leading-snug text-gray-300 opacity-50 mb-6">
                     {slides[currentSlide].description}
                   </p>
-
-                  <button
-                    className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-                  mt-2 sm:mt-10 
-                  h-[50px] sm:h-[60px] lg:h-[70px] 
-                  w-[160px] sm:w-[200px] lg:w-[240px] 
-                  text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-                  text-[14px] sm:text-[18px] lg:text-[20px] 
-                  py-2 
-                  transition-all duration-300 ease-in-out 
-                  hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
-                  >
-                    {" "}
-                    Watch Demo
-                  </button>
                 </div>
               </motion.div>
             </AnimatePresence>
