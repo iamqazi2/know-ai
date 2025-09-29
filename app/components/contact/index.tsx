@@ -60,27 +60,13 @@ const ContactSection = () => {
 
   return (
     <div>
-      <style jsx global>{`
-        #full_name_input {
-          background: #000 !important;
-        }
-      `}</style>
       <Navbar />
       <div
         ref={sectionRef}
         className="min-h-screen relative flex flex-col items-center bg-black bg-[url('/contact-bg.svg')]  justify-center px-4 py-26"
       >
         {" "}
-        <div
-          className="
-        h-[36px] sm:h-[40px] 
-        flex items-center justify-between 
-        px-[8px] md:px-[6px] 
-        rounded-[32px] border border-[#FFFFFF1A] 
-        bg-gradient-to-r from-white/10 to-transparent 
-        shadow-[inset_0px_1px_10px_0px_rgba(0,0,0,0.25)] 
-        opacity-100 gap-[4px] md:gap-[4px] mb-8"
-        >
+        <div className="h-[36px] sm:h-[40px] flex items-center justify-between px-[8px] md:px-[6px] rounded-[32px] border border-[#FFFFFF1A] bg-gradient-to-r from-white/10 to-transparent shadow-[inset_0px_1px_10px_0px_rgba(0,0,0,0.25)] opacity-100 gap-[4px] md:gap-[4px] mb-8">
           <Image
             src="/contacts.svg"
             alt="Our Desk"
