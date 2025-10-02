@@ -13,10 +13,7 @@ const ProjectsSection = () => {
         "Client: Demo / SMEs",
       ],
       categories: ["Live Workflow"],
-      images: [
-        "https://framerusercontent.com/images/6igmB60fniZZ2g62iKIWQ848llo.jpg",
-        "https://framerusercontent.com/images/shPlLwe662SqZNtKzOhZzw5yDGQ.png",
-      ],
+      images: ["/Mockups/slaycanvas1.jpg", "/Mockups/slaycanvas.jpg"],
     },
     {
       id: 2,
@@ -29,10 +26,7 @@ const ProjectsSection = () => {
         "Client: Corporate",
       ],
       categories: ["Project Overview"],
-      images: [
-        "https://framerusercontent.com/images/oITRaXEkBVhukMYINXV2xi05PY.jpg",
-        "https://framerusercontent.com/images/BChNf0ssn5x1I9kAk4vwX8qT5o.png",
-      ],
+      images: ["/icons/3.jpg", "/Mockups/youtube.jpg"],
     },
     {
       id: 3,
@@ -45,10 +39,7 @@ const ProjectsSection = () => {
         "Client: KnowAI",
       ],
       categories: ["Figma Prototype"],
-      images: [
-        "https://framerusercontent.com/images/h33bTK94GjgfacsggRpl9F5QXes.png",
-        "https://framerusercontent.com/images/mdHohhCEac2dy5qj6Hz8xLx3o.png",
-      ],
+      images: ["/Mockups/wordpress.jpg", "/icons/1.jpg"],
     },
   ];
 

@@ -18,7 +18,7 @@ import { faqs as service5Faqs } from "@/app/servicesFAQs/service5";
 const allServices = [
   {
     id: 1,
-    title: "AI Consultant and Strategy",
+    title: "AI Consulting & Strategy",
     description:
       "Identify high-impact areas where AI can deliver measurable business value.",
     detailedDescription: `We help organizations discover where artificial intelligence can generate measurable business
@@ -70,7 +70,7 @@ export default function ServicePage() {
   const currentRef = useRef({ x: 0, y: 0 });
   const rafRef = useRef<number | null>(null);
   const visibleRef = useRef(false);
-  
+
   const params = useParams();
   const serviceId = Number(params.id);
   const service = allServices.find((s) => s.id === serviceId);
@@ -146,47 +146,73 @@ export default function ServicePage() {
     <div className="bg-black text-white relative">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden bg-black">
+        {/* Subtle centered gradient */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#3d1f8f]/15 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#521ED6]/10 rounded-full blur-2xl" />
 
-      <section
-        className="relative w-full flex flex-col items-center justify-start text-center
-             px-4 pt-56 pb-32 bg-gradient-to-b from-[#774EE0]/40 via-[#774EE0]/20 to-black"
-      >
+        {/* Animated gradient orbs */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#521ED6]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#7E56E2]/15 rounded-full blur-3xl animate-pulse delay-700" />
+
+        {/* Badge */}
         <div
           ref={strategicBadgeRef}
-          className="absolute top-36 md:top-48 left-1/2 transform -translate-x-1/2
-               bg-gradient-to-r from-white/20 to-black/40 backdrop-blur-md
-               border border-white/10 rounded-full px-3 py-2 text-xs sm:text-sm md:text-base z-20"
+          className="relative mb-6 bg-gradient-to-r from-white/20 via-[#8D6AE6]/10 to-black/40 backdrop-blur-md
+               border border-white/10 rounded-full px-4 py-2.5 text-sm md:text-base z-20 
+               shadow-lg shadow-[#774EE0]/20 hover:shadow-[#774EE0]/40 transition-all duration-300"
         >
           <span className="flex items-center gap-2">
             <Image
               src="/our-desk.png"
               alt="Our Desk"
-              className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border border-white/10 p-[2px] object-contain"
-              width={28}
-              height={28}
+              className="w-7 h-7 sm:w-9 sm:h-9 rounded-full border border-white/20 p-[2px] object-contain"
+              width={32}
+              height={32}
             />
-            Our Services
+            <span className="bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent font-medium">
+              Our Services
+            </span>
           </span>
         </div>
 
-        {/* Title & Description */}
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 z-10 mt-12">
+        {/* Title with enhanced gradient */}
+        <h1
+          className="relative text-5xl md:text-7xl lg:text-8xl font-bold z-10
+                       bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent
+                       drop-shadow-2xl leading-tight"
+        >
           {service.title}
         </h1>
-        <p className="max-w-2xl text-gray-300 z-10">{service.description}</p>
-      </section>
 
-      {/* Detailed description + Book Appointment */}
-      <section className="px-6 md:px-12 py-16 text-center relative z-10 max-w-4xl mx-auto">
-        <p className="text-gray-300 mb-8">{service.detailedDescription}</p>
+        {/* Description with reduced gap */}
+        <p
+          className="relative max-w-3xl text-base md:text-lg lg:text-xl text-gray-300/90 z-10
+                      leading-relaxed px-4 mb-6"
+        >
+          {service.description}
+        </p>
+
+        {/* Detailed Description */}
+        <p
+          className="relative max-w-4xl text-sm md:text-base lg:text-lg text-gray-400 z-10
+                      leading-relaxed px-4 mb-8"
+        >
+          {service.detailedDescription}
+        </p>
+
+        {/* Book Appointment Button */}
         <button
-          className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-          h-[60px] w-[220px] text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-          text-[18px] py-2 transition-all duration-300 ease-in-out hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+          className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+          h-[60px] w-[220px] text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
+          text-[18px] py-2 transition-all duration-300 ease-in-out hover:scale-105 shadow-lg hover:shadow-purple-500/25 z-10"
         >
           Book an Appointment
         </button>
+
+        {/* Decorative element */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />
       </section>
 
       {/* FAQ Section */}

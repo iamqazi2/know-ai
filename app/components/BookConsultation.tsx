@@ -23,45 +23,40 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
     {
       id: 1,
       title: "AI Consulting & Strategy",
-      category: "AI Opportunity Assessment",
       description:
-        "Identify high-impact areas where AI can deliver measurable business value.",
+        "We help organizations discover where artificial intelligence can generate measurable business value. Our consulting begins with a deep assessment of current operations, data readiness, and digital maturity.",
       topImage: "/ai-consulting.png",
       banner: "/Graphics/AI-consulting.jpg",
     },
     {
       id: 2,
       title: "AI Solution Development",
-      category: "Custom AI Workflow Design",
       description:
-        "Build tailored automation workflows aligned with specific operational needs.",
+        "We design and build customized AI solutions tailored to specific organizational needs. Our team collaborates closely with stakeholders to understand business challenges and operational workflows.",
       topImage: "/ai-solution.png",
       banner: "/Graphics/AI-solutions.png",
     },
     {
       id: 3,
       title: "Seamless AI Deployment",
-      category: "AI Implementation & Integration",
       description:
-        "Integrate AI solutions into existing systems for minimal disruption and maximum benefit.",
+        "Deploying AI is more than just technical setup—it’s about ensuring adoption with minimal disruption. We provide end-to-end AI deployment services, from model integration to system alignment.",
       topImage: "/seamless-ai.png",
       banner: "/Graphics/seamless.png",
     },
     {
       id: 4,
       title: "Process Automation",
-      category: "Intelligent Task Automation",
       description:
-        "Replace repetitive manual work with AI-driven, reliable, and fast processes.",
+        "Deploying AI is more than just technical setup—it’s about ensuring adoption with minimal disruption. We provide end-to-end AI deployment services, from model integration to system alignment.",
       topImage: "/process-automation.png",
       banner: "/Graphics/process.png",
     },
     {
       id: 5,
       title: "Operational Optimization",
-      category: "AI-Powered Process Enhancement",
       description:
-        "Use AI insights to streamline workflows, reduce inefficiencies, and boost output.",
+        "We help businesses eliminate repetitive manual tasks through AI-driven automation. From data entry to workflow approvals, our intelligent automation solutions save time and reduce errors.",
       topImage: "/operational.png",
       banner: "/Graphics/operational.png",
     },
@@ -220,8 +215,8 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
             <Link key={project.id} href={`/services/service/${project.id}`}>
               <div
                 ref={addToCardRefs}
-                className="relative w-full max-w-[397px] h-auto md:h-[509px] 
-                px-5 pt-6 rounded-[20px] border border-white/10 
+                className="relative w-full max-w-[397px] h-auto 
+                px-5 py-6 rounded-[20px] border border-white/10 
                 bg-black/20 hover:shadow-[0_0_30px_rgba(145,94,255,0.35)] 
                 transition-all duration-300 group mx-auto"
               >
@@ -247,12 +242,9 @@ const BookConsultation = ({ currentServiceId }: BookConsultationProps) => {
                 <h3 className="text-[22px] sm:text-[24px] lg:text-[28px] font-urbanist font-medium text-white leading-[100%] mb-2">
                   {project.title}
                 </h3>
-                <p className="text-[14px] sm:text-[16px] lg:text-[18px] font-urbanist font-normal capitalize text-white/50 w-fit rounded mb-4">
-                  {project.category}
-                </p>
 
                 {/* Description */}
-                <p className="text-[13px] sm:text-[14px] font-dmSans font-normal text-white/50 leading-[140%] mt-6 sm:mt-10">
+                <p className="text-[13px] sm:text-[14px] font-dmSans font-normal h-[98px] text-white/50 leading-[140%] mt-2 ">
                   {project.description}
                 </p>
 

@@ -1,45 +1,50 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
 const ServicesSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 5;
+  const totalSlides = 6;
 
-  const slides = [
-    {
-      title: "Personal Assistant",
-      description:
-        "Lorem Ipsum dolor sit amet consectetur. Quam viverra sed urna cursus blandit non sem. Vestibulum quis mauris et diam varius ut risus lectus arcu diam eget mollit.",
-      videoPlaceholder: true,
-    },
-    {
-      title: "Smart Automation",
-      description:
-        "Advanced AI-powered automation workflows that adapt to your business needs and scale efficiently.",
-      videoPlaceholder: true,
-    },
-    {
-      title: "Data Analytics",
-      description:
-        "Comprehensive analytics and insights to help you make informed decisions with real-time data.",
-      videoPlaceholder: true,
-    },
-    {
-      title: "Process Optimization",
-      description:
-        "Streamline your operations with intelligent process optimization and workflow management.",
-      videoPlaceholder: true,
-    },
-    {
-      title: "Custom Solutions",
-      description:
-        "Tailored AI solutions designed specifically for your industry and business requirements.",
-      videoPlaceholder: true,
-    },
-  ];
+  const slides = useMemo(
+    () => [
+      {
+        title: "Automate Bookings",
+        description:
+          "Never miss a client again! Our smart booking bots schedule appointments, send reminders, and confirm instantly saving time while boosting customer satisfaction.",
+      },
+      {
+        title: "Business Outreach Automation",
+        description:
+          "Reach the right audience effortlessly! Get your bot that personalize ads, send targeted messages, and connect you with businesses that matter automatically.",
+      },
+      {
+        title: "Lead Qualifier",
+        description:
+          "Stop wasting time on unfit leads! Our smart bot calls, asks key questions, and updates your CRM so your sales team only focuses on qualified prospects.",
+      },
+      {
+        title: "E-Commerce",
+        description:
+          "Turn shopping seamless! Get a bot that auto-confirms your store orders, calls customers instantly, and even edits orders on request boosting trust and sales.",
+      },
+      {
+        title: "Content Automation",
+        description:
+          "From a single prompt to full content! Get a bot that writes blogs, drafts posts, and publishes across WordPress, Instagram, Facebook, or TikTok automatically.",
+      },
+      {
+        title: "Support System",
+        description:
+          "Deliver 24/7 customer care! Get a bot that manages tickets, recalls past queries, answers instantly, and keeps users updated making support seamless and smart.",
+      },
+    ],
+    []
+  );
+
+  // Removed iframe preload and loading logic
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -105,14 +110,18 @@ const ServicesSection = () => {
               >
                 {/* Video placeholder */}
                 <div className="mb-6 flex justify-center">
-                  <iframe
-                    style={{ border: "1px solid rgba(0, 0, 0, 0.1)" }}
-                    width="100%"
-                    height="600"
-                    src="https://embed.figma.com/proto/EHrFTbrqonOn4QJa2N6Zex/N8N?node-id=908-209398&scaling=scale-down-to-fit&content-scaling=fixed&page-id=64%3A13238&starting-point-node-id=727%3A106039&show-proto-sidebar=0&hide-ui=true&transparent=true&embed-host=share"
-                    // allowFullScreen
-                    className="max-w-[800px]  rounded-lg"
-                  ></iframe>
+                  <div
+                    className="relative w-full mx-auto max-w-[900px]"
+                    style={{ aspectRatio: "16/9" }}
+                  >
+                    <video
+                      src="/Outreach_Businesses.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                    />
+                  </div>
                 </div>
 
                 {/* Text content */}
