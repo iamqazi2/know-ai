@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 // Declare global GSAP types
 declare global {
@@ -138,18 +139,20 @@ export default function AIAssistant() {
       </div>
 
       {/* Button */}
-      <button
-        className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-          sm:mt-8 
-          h-[48px] sm:h-[56px] lg:h-[64px] 
-          w-[150px] sm:w-[200px] lg:w-[240px] 
-          text-white font-bold rounded-[10px] border-2 border-[#8D6AE6] 
-          text-[12px]  lg:text-[20px] 
-          transition-all duration-300 ease-in-out 
+      <Link href="/book-meetings">
+        <button
+          className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+          sm:mt-8
+          h-[48px] sm:h-[56px] lg:h-[64px]
+          w-[150px] sm:w-[200px] lg:w-[240px]
+          text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
+          text-[12px]  lg:text-[20px]
+          transition-all duration-300 ease-in-out
           hover:scale-105 transform shadow-lg hover:shadow-purple-500/25"
-      >
-        Book an Appointment
-      </button>
+        >
+          Book an Appointment
+        </button>
+      </Link>
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/Footer";
 import FAQSection from "@/app/components/portfolio/components/FAQSection";
@@ -203,13 +204,15 @@ export default function ServicePage() {
         </p>
 
         {/* Book Appointment Button */}
-        <button
-          className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
-          h-[60px] w-[220px] text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
-          text-[18px] py-2 transition-all duration-300 ease-in-out hover:scale-105 shadow-lg hover:shadow-purple-500/25 z-10"
-        >
-          Book an Appointment
-        </button>
+        <Link href="/book-meetings">
+          <button
+            className="bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+            h-[60px] w-[220px] text-white font-bold rounded-[10px] border-2 border-[#8D6AE6]
+            text-[18px] py-2 transition-all duration-300 ease-in-out hover:scale-105 shadow-lg hover:shadow-purple-500/25 z-10"
+          >
+            Book an Appointment
+          </button>
+        </Link>
 
         {/* Decorative element */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/50 to-transparent z-10" />

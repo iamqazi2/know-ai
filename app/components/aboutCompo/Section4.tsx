@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { FaFingerprint } from "react-icons/fa";
+import Link from "next/link";
 
 const Section4 = () => {
   return (
@@ -53,13 +54,15 @@ const Section4 = () => {
             </div>
 
             <div className="flex gap-3 items-center">
-              <button
-                className="py-2.5 px-4.5 bg-gradient-to-b from-[#521ED6] to-[#7E56E2] 
-                            text-white font-[400] rounded-[10px] border-2 border-[#8D6AE6] 
+              <Link href="/book-meetings">
+                <button
+                  className="py-2.5 px-4.5 bg-gradient-to-b from-[#521ED6] to-[#7E56E2]
+                            text-white font-[400] rounded-[10px] border-2 border-[#8D6AE6]
                              transition-all duration-300 ease-in-out hover:scale-105 transform shadow-lg hover:shadow-purple-500/25 "
-              >
-                Book an Appointment
-              </button>
+                >
+                  Book an Appointment
+                </button>
+              </Link>
 
               <div className="w-5 px-5">
                 <hr className="bg-gray-700 h-6 w-[0.1px]" />

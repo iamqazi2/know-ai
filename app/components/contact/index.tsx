@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Navbar from "../navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -184,16 +185,14 @@ const ContactSection = () => {
                 />
               </div>
               {/* Submit Button */}
-              <button
-                type="button"
-                onClick={() => {
-                  // Handle form submission logic here
-                  console.log("Form submitted");
-                }}
-                className="w-full bg-gradient-to-b border-1 border-white/20 from-[#521ED6] to-[#7E56E2] text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 shadow-lg"
-              >
-                Book an Appointment
-              </button>
+              <Link href="/book-meetings">
+                <button
+                  type="button"
+                  className="w-full bg-gradient-to-b border-1 border-white/20 from-[#521ED6] to-[#7E56E2] text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 shadow-lg"
+                >
+                  Book an Appointment
+                </button>
+              </Link>
             </div>
           </div>
         </div>
