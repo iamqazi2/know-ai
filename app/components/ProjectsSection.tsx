@@ -18,7 +18,7 @@ const projects = [
     title: "Project 2",
     features: ["Feature 1", "Feature 2", "Feature 3"],
     categories: ["Category 2"],
-    images: ["/icons/3.jpg", "/Mockups/youtube.jpg"],
+    images: ["/icons/two.jpg", "/Mockups/youtube.jpg"],
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const projects = [
     title: "Project 3",
     features: ["Feature 1", "Feature 2", "Feature 3"],
     categories: ["Category 3"],
-    images: ["/Mockups/wordpress.jpg", "/icons/1.jpg"],
+    images: ["/Mockups/wordpress.jpg", "/icons/one.jpg"],
   },
 ];
 
