@@ -128,7 +128,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                     }}
                   >
                     <Image
-                      src={image}
+                      src={images[imageIndex]}
                       alt={`${title} - Image ${imageIndex + 1}`}
                       className="w-full h-full object-cover rounded-3xl transition-transform duration-700 group-hover:scale-110"
                       width={1200}
