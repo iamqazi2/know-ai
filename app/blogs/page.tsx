@@ -11,7 +11,7 @@ const BlogPage = () => {
         <BlogSection1 />
         <BlogSection2 />
         <Footer />
-        <div className="backdrop-blur-md bg-transparent fixed -bottom-1 left-0 w-full h-[80px] z-60 rounded-t-xl shadow-lg" />
+        {/* <div className="backdrop-blur-md bg-transparent fixed -bottom-1 left-0 w-full h-[80px] z-60 rounded-t-xl shadow-lg" /> */}
     </div>
   )
 }

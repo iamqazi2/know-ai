@@ -8,7 +8,7 @@ const BlogSection1 = () => {
   return (
     <div>
       <motion.div
-        className="relative flex flex-col items-center bg-black bg-[url('/contact-bg.svg')] justify-center px-4 pt-26 pb-[100px]"
+        className="relative flex flex-col z-80 overflow-visible items-center bg-[url('/contact-bg.svg')] justify-center px-4 pt-26 pb-[100px]"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
