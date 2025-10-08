@@ -1,14 +1,16 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Articles from "./components/about";
 import Footer from "./components/Footer";
 import HeroSection from "./components/hero-section";
-import IntegrationsSection from "./components/IntegrationsSection";
-import ProjectsSection from "./components/ProjectsSection";
-import PersonalAssistantSlider from "./components/ServicesSection";
-import BookConsultation from "./components/BookConsultation";
-import Services from "./components/Services";
-import AutomationSection from "./components/AutomationSection";
+import { Skeleton } from "@/components/ui/skeleton";
+const IntegrationsSection = dynamic(() => import("./components/IntegrationsSection"));
+const ProjectsSection = dynamic(() => import("./components/ProjectsSection"));
+const PersonalAssistantSlider = dynamic(() => import("./components/ServicesSection"));
+const BookConsultation = dynamic(() => import("./components/BookConsultation"));
+const Services = dynamic(() => import("./components/Services"));
+const AutomationSection = dynamic(() => import("./components/AutomationSection"));
 
 export default function Home() {
   const dotRef = useRef<HTMLDivElement | null>(null);
@@ -71,12 +73,24 @@ export default function Home() {
       <div className="relative">
         <HeroSection />
         <Articles />
-        <Services />
-        <PersonalAssistantSlider />
-        <AutomationSection />
-        <BookConsultation />
-        <ProjectsSection />
-        <IntegrationsSection />
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <Services />
+        </Suspense>
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <PersonalAssistantSlider />
+        </Suspense>
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <AutomationSection />
+        </Suspense>
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <BookConsultation />
+        </Suspense>
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <ProjectsSection />
+        </Suspense>
+        <Suspense fallback={<Skeleton className="h-96 w-full" />}>
+          <IntegrationsSection />
+        </Suspense>
         <Footer />
         <div className="backdrop-blur-md bg-transparent fixed -bottom-1 left-0 w-full h-[80px] z-60 rounded-t-xl shadow-lg" />
         {/* White cursor follower */}

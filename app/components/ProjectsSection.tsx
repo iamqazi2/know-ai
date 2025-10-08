@@ -63,8 +63,9 @@ export default function ProjectSection() {
                 alt="Our Desk"
                 width={32}
                 height={32}
-                className="w-[24px] h-[24px] md:w-[32px] md:h-[32px] 
-                rounded-[20px] border border-white/10 
+                priority
+                className="w-[24px] h-[24px] md:w-[32px] md:h-[32px]
+                rounded-[20px] border border-white/10
                 p-[1px] sm:p-[2px] object-contain"
               />
               <span

@@ -13,6 +13,7 @@ const Section2 = () => {
                 loop
                 muted
                 playsInline
+                preload="none"
                 className="w-full h-full md:h-auto rounded-3xl border border-gray-900"
             />
         </div>

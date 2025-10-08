@@ -90,8 +90,9 @@ const ServicesSection = () => {
             alt="Our Desk"
             width={32}
             height={32}
-            className="w-[28px] h-[28px] md:w-[32px] md:h-[32px] 
-          rounded-[20px] border border-white/10 
+            priority
+            className="w-[28px] h-[28px] md:w-[32px] md:h-[32px]
+          rounded-[20px] border border-white/10
           p-[1px] sm:p-[2px] object-contain"
           />
           <span
@@ -126,6 +127,7 @@ const ServicesSection = () => {
                       autoPlay
                       muted
                       loop
+                      preload="none"
                       className="absolute  inset-0 w-full h-full object-cover rounded-xl"
                     />
                   </div>
@@ -150,13 +152,6 @@ const ServicesSection = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
-
-          {/* Preload all videos for better performance */}
-          <div style={{ display: 'none' }}>
-            {slides.map((slide, index) => (
-              <video key={`preload-${index}`} src={slide.videoSrc} preload="metadata" muted />
-            ))}
           </div>
         </div>
 

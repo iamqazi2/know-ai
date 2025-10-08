@@ -108,6 +108,7 @@ const HeroSection = () => {
         loop
         muted
         playsInline
+        preload="none"
         className="absolute top-20 left-0 w-full h-full object-cover opacity-100 z-90 mix-blend-overlay"
       />
 
@@ -122,6 +123,7 @@ const HeroSection = () => {
             alt="Our Desk"
             height={28}
             width={28}
+            priority
             className="object-contain"
           />
           Your strategic partner from start to scale
