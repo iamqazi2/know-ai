@@ -7,13 +7,14 @@ import Link from 'next/link'
 import { getBlogById, getBlogList } from '../../data/blogs'
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-const BlogDetailPage = ({ params }: BlogPageProps) => {
-  const blogId = parseInt(params.id)
+const BlogDetailPage = async ({ params }: BlogPageProps) => {
+  const { id } = await params;
+  const blogId = parseInt(id)
   const blog = getBlogById(blogId)
   const allBlogs = getBlogList()
   const relatedBlogs = allBlogs
